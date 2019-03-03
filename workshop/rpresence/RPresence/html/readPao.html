@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Read a pao data object.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for readPao {RPresence}"><tr><td>readPao {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read a pao data object.</h2>
+
+<h3>Description</h3>
+
+<p><code>readPao</code> Creates a pao data object from a PRESENCE data file.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+readPao(f)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>f</code></td>
+<td>
+<p>A string specifying the name of the PRESENCE data file.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>list of class &quot;<code>pao</code>&quot; containing the data required to fit an
+occupancy model using <code><a href="occMod.html">occMod</a></code>.
+The list contains the following objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>nunits</code></td>
+<td>
+<p>number of units or sampling units, i.e., <code>nrow(data)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nsurveys</code></td>
+<td>
+<p>total number of surveys, i.e., <code>ncol(data)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nseasons</code></td>
+<td>
+<p>number of seasons of data.</p>
+</td></tr>
+<tr valign="top"><td><code>det.data</code></td>
+<td>
+<p>detection/nondetection data, i.e., <code>data</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>unitcov</code></td>
+<td>
+<p>see above. If no covariates are supplied a vector of 1's named TEMP is added.</p>
+</td></tr>
+<tr valign="top"><td><code>survcov</code></td>
+<td>
+<p>see above. A factor called SURVEY is automatically added to allow survey-specific detection probabilities (but equal across units).</p>
+</td></tr>
+<tr valign="top"><td><code>nsurveyseason</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>title</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>unitnames</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>surveynames</code></td>
+<td>
+<p>a vector of strings providing labels for the survey occasions. Of little practical consequence.</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>see above. Equals <code>f</code> for <code>createPao</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie and Jim Hines
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+readPao(system.file('extdata/skinks.pao',package='RPresence'))
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

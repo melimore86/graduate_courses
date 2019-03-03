@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Predict real parameter values.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for predict.occMod {RPresence}"><tr><td>predict.occMod {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Predict real parameter values.</h2>
+
+<h3>Description</h3>
+
+<p>Predict real parameter values from a model that has been fitted to the data, using the
+variable or covariates values that are supplied by the user. <b>Currently has only been coded
+to predict probabilities and checked for the static, or single-season, occupancy model.</b>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'occMod'
+predict(object, newdata, param = NULL, conf = 0.95)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>object</code></td>
+<td>
+<p>and object of class <code>occMod</code> which is the model that has been fitted to
+the data from which predictions are required. The result of a call to <code><a href="occMod.html">occMod</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>newdata</code></td>
+<td>
+<p>a data frame containing the values of the variables for which predictions are
+required. Variable names must exactly match those used in the fitted model. May contain
+additional variables not used in the fitted model.</p>
+</td></tr>
+<tr valign="top"><td><code>param</code></td>
+<td>
+<p>a string containing the name of the real parameter for which predictions
+are required, e.g., <code>type="psi"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>conf</code></td>
+<td>
+<p>level for confidence interval (may be vector valued).</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Note that can not make predictions directly from models that have been imported from a PRESENCE
+project using the <code><a href="importProject.html">importProject</a></code> function.
+</p>
+
+
+<h3>Value</h3>
+
+<p>returns a data frame containing the predicted value, standard error and limits of a
+95% confidence interval.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+psi.real=predict(mod1,salmdr.data$survcov,param="psi",conf=0.95); print(head(psi.real))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

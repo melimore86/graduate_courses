@@ -1,0 +1,63 @@
+####Plan
+Data Management Plan
+•	Creating and continuing to 
+•	Data management checklist for each sample data
+Data Stewardship Roles and Responsibilities
+•	Having rules for each user on what data they can enter as well as edit
+
+Acquire
+Methods of acquiring data, to this project
+•	Field measurements from sampling (follow guidelines developed earlier with Dan and Robert, human, sensor, etc.)
+•	Data from other cooperators
+
+Data and File format standards
+•	Standardization for all data collected, date, coordinates, measurements
+•	Creating a data dictionary
+
+Organize Files/ Data
+•	Determine the format of each data set collected/entered
+•	Determine the storage requirement of each type of data set
+•	Use logical naming conventions and readmes for clarification 
+
+####Process
+Workflow capture
+•	Describe technology and software needed for data processing
+•	List all inputs and output
+o	If an R code will output a .csv
+•	Documenting the process with steps
+•	Creating best practices, a possible checklist
+•	Some mentions in USGS about version control, publishing data and analysis to be public 
+Analyze
+Data Analysis 
+•	Statistical analysis, i.e avg daily mean for salinity
+•	Visualizations for cleaned and analyzed data
+•	Spatial analysis of cooperator data and collected salinity data, and shoreline changes
+•	Analysis Documentation 
+o	Notes in scripts
+o	Readmes
+o	Documenting steps in analysis
+
+Preserve
+Repositories
+•	Storing final data and analysis within repositories, Github
+Archiving 
+•	Long-term storage, T Drive
+
+Publish/Share
+Data Release
+•	Email releases for major Github repository publishes 
+
+
+
+Additional info
+
+o	https://www.usgs.gov/products/data-and-tools/data-management
+o	This site was the model for the data sharing plan I developed for the Lone Cabbage project.  
+Another example is here: https://www.nsf.gov/bio/pubs/BIODMP_Guidance.pdf
+
+•	Discuss limitations.
+•	Discuss how other data types can benefit from the data management. 
+•	Discuss advantages of the approach
+o	can be used by many people not necessarily IT
+o	Maybe create a test repository 
+ 

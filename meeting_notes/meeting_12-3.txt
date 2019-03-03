@@ -1,0 +1,37 @@
+Chatpers:
+
+workflow one chapter, work with this since there is already the workflow
+geospatial- might not have the imagery (could be a lesser chapter)
+water quality - incorporating with the spatial data
+
+
+On writing well- William Zinsser 
+
+Chapter 1, and Chapter about science writting
+
+Components to the workflow:
+intervals
+
+
+Outline the chapter using the existing workflow
+
+Need to capture the spatial context: need to talk with Joe and to meet up with Joe
+
+
+Talk with Jennifer, and then working on summary code for Epoch 3, 
+
+Check with the transect_packet, and export from .csv and then read the summary
+
+Maybe with Ben, have to had a header code to change the date and time, and read in the .csv
+
+
+
+Transects with the size of the oyster on the datasheet
+
+Work with steve to get that transect data sheet on the Github
+
+
+
+
+
+

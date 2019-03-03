@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a pao data object.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for createPao {RPresence}"><tr><td>createPao {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a pao data object.</h2>
+
+<h3>Description</h3>
+
+<p><code>createPao</code> Creates a pao data object from R variables.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createPao(data, unitcov = NULL, survcov = NULL,
+  nsurveyseason = ncol(data), nmethods = 1, frq = rep(1, nrow(data)),
+  title = "PRESENCE Analysis", unitnames = paste0("unit", 1:nrow(data)),
+  paoname = "pres.pao")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data frame containing the detection (=1) and nondetection (=0) data
+with observations from a sampling unit along a row, and surveys in the columns.
+Missing values are allowed (=<code>NA</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>unitcov</code></td>
+<td>
+<p>data frame for unit-specific covariates (e.g., habitat,
+elevation, etc.) with 1 row per unit (so <code>nrow(unitcov) == nrow(data)</code>).
+Each column of the data frame should contain a single covariate, with the
+column name used as the covariate name. Covariatecolumn names shoud not contain
+spaces, and avoid using all uppercase as  some terms are used by the package
+to define common effects used in models, e.g., SURVEY. If there are no
+unit-specific covariates then <code>unitcov=NULL</code>. Note that additional
+unit-specific covariates can be supplied when fitting a model with
+<code><a href="occMod.html">occMod</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>survcov</code></td>
+<td>
+<p>data frame for survey-specific covariates (e.g., survey time,
+weather conditions, observer, etc.) with 1 row per survey (so
+<code>nrow(survcov) == nrow(data)*ncol(data)</code>). Each column of the data
+frame should contain a single covariate, with the column name used as the
+covariate name. Covariate/column names shoud not contain spaces, and avoid
+using all uppercase as  some terms are used by the package to define common
+effects used in models, e.g., SURVEY. If there are no survey-specific
+covariates then <code>survcov=NULL</code>. Note that additional survey-specific
+covariates can be supplied when fitting a model with <code><a href="occMod.html">occMod</a></code>.
+Note that the format of survey-specific covariates in <code>survcov</code> is
+different from that used in PRESENCE (i.e., long vs flat format respectively.</p>
+</td></tr>
+<tr valign="top"><td><code>nsurveyseason</code></td>
+<td>
+<p>vector of the number of surveys per season (e.g., if
+three seasons, with 4 surveys per season, <code>nsurveyseason=c(4,4,4)</code>).
+The default assumes that <code>data</code> is for a single-season or static
+occupancy model.</p>
+</td></tr>
+<tr valign="top"><td><code>nmethods</code></td>
+<td>
+<p>integer number of methods per survey</p>
+</td></tr>
+<tr valign="top"><td><code>title</code></td>
+<td>
+<p>(optional) a label included in the PRESENCE output files,
+of little practical consequence.</p>
+</td></tr>
+<tr valign="top"><td><code>unitnames</code></td>
+<td>
+<p>a vector of string containing labels for each sampling
+unit. Included in the results as row names for the real parameter estimates
+of the <code><a href="occMod.html">occMod</a></code> object.</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>string containing a name for the temporary pao</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>list of class &quot;<code>pao</code>&quot; containing the data required to fit an
+occupancy model using <code><a href="occMod.html">occMod</a></code>. The list contains the following
+objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>nunits</code></td>
+<td>
+<p>number of units or sampling units, i.e., <code>nrow(data)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nsurveys</code></td>
+<td>
+<p>total number of surveys, i.e., <code>ncol(data)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nseasons</code></td>
+<td>
+<p>number of seasons of data.</p>
+</td></tr>
+<tr valign="top"><td><code>det.data</code></td>
+<td>
+<p>detection/nondetection data, i.e., <code>data</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>unitcov</code></td>
+<td>
+<p>see above. If no covariates are supplied a vector of 1's
+named TEMP is added.</p>
+</td></tr>
+<tr valign="top"><td><code>survcov</code></td>
+<td>
+<p>see above. A factor called SURVEY is automatically added to
+allow survey-specific detection probabilities (but equal across units).</p>
+</td></tr>
+<tr valign="top"><td><code>nsurveyseason</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>title</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>unitnames</code></td>
+<td>
+<p>see above.</p>
+</td></tr>
+<tr valign="top"><td><code>surveynames</code></td>
+<td>
+<p>a vector of strings providing labels for the survey occasions. Of little practical consequence.</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>see above. Equals <code>f</code> for <code>createPao</code>.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

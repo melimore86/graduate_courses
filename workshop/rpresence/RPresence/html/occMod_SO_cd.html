@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fit static occupancy, correlated detections model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occMod_SO_cd {RPresence}"><tr><td>occMod_SO_cd {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fit static occupancy, correlated detections model</h2>
+
+<h3>Description</h3>
+
+<p>This is not intended for direct use, but instead the <code><a href="occMod.html">occMod</a></code> function should be used with <code>type="so.cd"</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+occMod_SO_cd(psi = call(), psi.cov = data$unitcov, theta = call(),
+  theta.cov = data$unitcov, p = call(), p.cov = data$survcov,
+  th0pi = call(), th0pi.cov = data$unitcov, modname = NULL,
+  paoname = NULL, outfile, model = 103, fixed = NULL, initvals = NULL,
+  data, VCoutopt = " ", noDerived = F, randinit = 0)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for occupancy probability (eg., ~1).</p>
+</td></tr>
+<tr valign="top"><td><code>psi.cov</code></td>
+<td>
+<p>a data frame containing the unit-specific covariates to use for the occupancy component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for secondary-scale occupancy probability.
+(eg., ~PRIME -&gt; th0 != th1, ~SURVEY -&gt; th0(1)=th1(1), th0(2)=th1(2),...)</p>
+</td></tr>
+<tr valign="top"><td><code>theta.cov</code></td>
+<td>
+<p>a data frame containing the secondary-scale specific covariates to use for the secondary-scaleoccupancy component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for detection probability.</p>
+</td></tr>
+<tr valign="top"><td><code>p.cov</code></td>
+<td>
+<p>a data frame containing the survey-specific covariates to use for the detection component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for local use before 1st segment.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi.cov</code></td>
+<td>
+<p>a data frame containing the unit-specific covariates to use for th0pi.</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>(optional) a string containing the model name</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>(optional) a string containing the filename for the temporary PRESENCE data file.</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>the PRESENCE model code. DO NOT CHANGE.</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>a single-column matrix containing values for real parameters to be fixed at. <code>rownnames(fixed)</code> should contain the index of the real parameters to be fixed.</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>initial values for the beta parameters at which PRESENCE begins the optimisation. The default values in PRESENCE is 0.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>the <code>pao</code> data object containing the detection data and other information.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>list of class <code>"occMod"</code> and <code>"soCd"</code>.
+</p>
+<p><code>occMod$beta</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of occurrence.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of occurrence.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of occurrence at the secondary scale.</p>
+</td></tr>
+<tr valign="top"><td><code>theta.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of occurrence at the secondary scale.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>p.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of local-use before 1st segment.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for th0pi.</p>
+</td></tr>
+<tr valign="top"><td><code>VC</code></td>
+<td>
+<p>the full variance-covariance matrix for all logistic regression coefficients.</p>
+</td></tr>
+</table>
+<p><code>occMod$real</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated probabilities of occurrence for each sampling unit, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>estimated probabilities of occurrence at the secondary scale for each sampling unit, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated probabilities of detection for each survey, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>psi_c</code></td>
+<td>
+<p>estimated probabilities of occurrence given the detection history for each sampling unit, along with standard errors and limits of 95% confidence interval. Will be <code>=1</code> for any unit where the species was detected at least once.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+#   example 1 - read previously created input file and run a model
+data=readPao('genpres.pao')  #  read simulated data from program GENPRES
+mod1=occMod(model=list(psi~1, theta~PRIME, p~1, th0pi~1), data=data, type="so.cd")
+
+#   example 2 - simulate data and run a mode
+sim_corr_det_data &lt;- function(sites=500,surveys=9,psi=.9,th=c(.2,.8),p=.6,th0pi=0) {
+  # simulates single-season correlated detections data
+  h=matrix(0,sites,surveys); px=c(0,p) # px=detection prob for each state (local-unocc, local-occ)
+  occ=0+(runif(sites)&lt;psi);            # randomly assign occupancy state of each site (0=unocc, 1=occ)
+  locc=occ*(runif(sites)&lt;th0pi);       # randomly assign local-occ state before 1st segment of trail
+  for (i in 1:surveys) {
+     locc=occ*(runif(sites)&lt;th[locc+1]);   # local-occ for survey i depends on previous local-occ
+     h[,i]=locc*(runif(sites)&lt;px[locc+1])  # detection depends on local-occ state (p=0 if not local-occ)
+  }
+return(h)
+}
+x=sim_corr_det_data(sites=1000,surveys=15)
+data=createPao(x)
+mod1=occMod(model=list(psi~1,       # constant psi
+                     theta~PRIME, # theta not equal theta'
+                     p~1,         # constant detection
+                     th0pi~1      # constant prop unocc before 1st segment
+), data=data, type="so.cd")  #  run ss-cd model
+print_one_site_estimates(mod1,site=1)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

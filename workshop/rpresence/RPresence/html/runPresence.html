@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: call PRESENCE to produce model estimates (replaces...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for runPresence {RPresence}"><tr><td>runPresence {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>call PRESENCE to produce model estimates (replaces &quot;write_dm_and_run&quot;)</h2>
+
+<h3>Description</h3>
+
+<p><code>runPresence</code> calls PRESENCE to produce model estimates.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+runPresence(a, dm = list(), model, modname = "model1", fixedvals = NULL,
+  initvals = NULL, modfitboot = NULL, maxfn = 32000, limit.real = FALSE,
+  VCoutopt = " ", noDerived = FALSE, randinit = 0, outfile)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>a</code></td>
+<td>
+<p>pao object</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>model number (not used anymore)</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>name of model (eg., &quot;psi(.)p(.)&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>vector of beta initial values</p>
+</td></tr>
+<tr valign="top"><td><code>maxfn</code></td>
+<td>
+<p>maximum number if iterations for optimization routine</p>
+</td></tr>
+<tr valign="top"><td><code>limit.real</code></td>
+<td>
+<p>causes PRESENCE to only print estimates for the 1st site</p>
+</td></tr>
+<tr valign="top"><td><code>VCoutopt</code></td>
+<td>
+<p>option for PRESENCE computation/output of beta/real var-cov matrices</p>
+</td></tr>
+<tr valign="top"><td><code>noDerived</code></td>
+<td>
+<p>if TRUE, doesn't print derived estimates from model</p>
+</td></tr>
+<tr valign="top"><td><code>dms</code></td>
+<td>
+<p>list of design matrices (should be 6 in list)</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>data.frame of fixed values (e.g., fixed$params&lt;-c(&quot;p[1]&quot;,&quot;p[3]&quot;),fixed$value&lt;-0)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Input is passed
+to PRESENCE via arguments (no pao or design matrix input files needed).  There are
+three choices for output:
+</p>
+
+<ul>
+<li><p> outfile=NULL - no output file saved, results in R variables only,
+</p>
+</li>
+<li><p> outfile=&quot;modname&quot; - output file saved with name of model and &quot;.out&quot; appended,
+</p>
+</li>
+<li><p> outfile=&quot;xyz&quot; - output file saved with user-specified name, (eg., &quot;xyz.out&quot;)
+</p>
+</li></ul>
+
+<p>The first option is best for running simulations of a model using &quot;Snowfall&quot;
+for multi-tasking.  The 2nd option is useful when you would like to find
+the full text output of a model from Windows explorer.  The 3rd option allows
+you to specify any output file name.
+</p>
+<p>choices for <code>VCoutopt</code> are:
+</p>
+
+<ul>
+<li><p>&quot;nose&quot;only compute likelihood and beta estimates, no beta var-cov matrix or beta SE's (useful for faster model selection of big models or simulations)
+</p>
+</li>
+<li><p>&quot;betavc&quot;compute but don't print beta var-cov matrix so we get beta SE's, don't compute real params
+</p>
+</li>
+<li><p>&quot;noreal&quot;compute and print beta beta var-cov matrix, don't compute real params (I think this is what you want for RPresence)
+</p>
+</li>
+<li><p>&quot;(default)&quot;compute real params and real var-cov matrix, don't print either var-cov matrix.
+</p>
+</li>
+<li><p>&quot;realbetavc&quot;compute real params and real var-cov matrix, print only beta var-cov matrix.
+</p>
+</li>
+<li><p>&quot;bothvc&quot;print both var-cov matrices.
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>list(LL=log-likelihood, beta=beta estimates, betaVC=var-cov matrix of betas).
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie and Jim Hines
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+runPresence("test.pao",list(dm1,dm2,dm3,dm4,dm5,dm6),100,"psi(.)p(.)")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

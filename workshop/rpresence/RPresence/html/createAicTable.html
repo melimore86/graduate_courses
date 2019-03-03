@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create AIC table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for createAicTable {RPresence}"><tr><td>createAicTable {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create AIC table</h2>
+
+<h3>Description</h3>
+
+<p>Create an AIC table of results from a list of previously run models
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createAicTable(mod.list, use.aicc = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>mod.list</code></td>
+<td>
+<p>a list of objects of class <code>occMod</code>, i.e., the output from
+the function <code><a href="occMod.html">occMod</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>use.aicc</code></td>
+<td>
+<p>logical argument for whether small-sample adjustment should be used
+with AIC. Effective sample set to number of units.
+... OR... user-defined value for effective sample size.  So, possibilities are:
+</p>
+
+<ul>
+<li><p><code>0 or FALSE</code>: Use AIC
+</p>
+</li>
+<li><p><code>1 or TRUE</code> : Use number of sites for eff. sample size to calculate AICc
+</p>
+</li>
+<li><p><code>n</code> : Use <code>n</code> for eff. sample size to calculate AICc
+</p>
+</li></ul>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns a list with the following components:
+</p>
+
+<ul>
+<li><p><code>table</code> - A data frame that includes:
+</p>
+
+<ul>
+<li><p>the name
+</p>
+</li>
+<li><p>AIC value
+</p>
+</li>
+<li><p>relative difference in AIC
+</p>
+</li>
+<li><p>AIC model weight
+</p>
+</li>
+<li><p>-2*log-likelihood
+</p>
+</li>
+<li><p>number of parameters
+</p>
+</li>
+<li><p>any warnings for each model
+</p>
+</li></ul>
+
+<p>Table entries are ranked according to AIC.
+
+</p>
+</li>
+<li><p><code>models</code> - List of models supplied in <code>mod.list</code>, ordered by AIC
+</p>
+</li>
+<li><p><code>ess</code> - Effective sample size for AICc calculation (0=use AIC, &gt;0=eff. samp. size)
+</p>
+</li></ul>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

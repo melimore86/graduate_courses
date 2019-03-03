@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate summed model weights for a set of variables for a...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for summedWgt {RPresence}"><tr><td>summedWgt {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate summed model weights for a set of variables for a specific parameter.</h2>
+
+<h3>Description</h3>
+
+<p>Calculates the summed model weights (and evidence ratios) for a set of variables
+<code>covnames</code>, for a parameter <code>param</code> and a set of models stored in an
+<code>aic.tab</code> object.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+summedWgt(covnames, param, aic.tab)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>covnames</code></td>
+<td>
+<p>a vector of string values containing the names of the variables of interest.</p>
+</td></tr>
+<tr valign="top"><td><code>param</code></td>
+<td>
+<p>a string with the name of the parameter of interest, e.g., <code>param="psi"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>aic.tab</code></td>
+<td>
+<p>an <code>aic.tab</code> object that includes the set of models from which the
+summed model weights are to be calculated.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>returns a data frame with the summed weights and evidence ratios.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="createAicTable.html">createAicTable</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

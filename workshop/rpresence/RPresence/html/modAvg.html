@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate model averaged estimates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for modAvg {RPresence}"><tr><td>modAvg {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate model averaged estimates</h2>
+
+<h3>Description</h3>
+
+<p>Calculates model averaged estimates of real parameters stored in a <code>aicTable</code> object;
+the result of <code><a href="createAicTable.html">createAicTable</a></code>. Does not perform model averaging of the
+regression coefficients, or beta parameters. Can be used to model average predicted
+probabilities too.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+modAvg(aic.tab, param = NULL, index = 1:nrow(aic.tab$table), conf = 0.95,
+  predict = FALSE, newdata)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>aic.tab</code></td>
+<td>
+<p>an <code>aicTable</code> object; the result of <code><a href="createAicTable.html">createAicTable</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>param</code></td>
+<td>
+<p>a string with the name of the real parameter to model average, e.g.,
+<code>param = "psi"</code>.  Presently, only works for parameters &quot;psi&quot; and &quot;p&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>index</code></td>
+<td>
+<p>a vector of integer values indexing which ranked models are to be model
+averaged across. Can be used if only model averaging across a subset of models.
+Note that AIC weights are recalcuated such that their sum = 1 for the subset.</p>
+</td></tr>
+<tr valign="top"><td><code>conf</code></td>
+<td>
+<p>level for confidence interval (may be vector valued).</p>
+</td></tr>
+<tr valign="top"><td><code>predict</code></td>
+<td>
+<p>if <code>FALSE</code> (default) then model averages observed real estimates.
+Otherwise model averages predicted values for <code>param</code> from the supplied <code>newdata</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>newdata</code></td>
+<td>
+<p>a data frame containing the values of the covariates for which
+predictions are required. Variable names must exactly match those used in the data.
+May contain varaibles that are not used in some models.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>returns a data frame containing the model averaged estimates, standard errors
+and limts of a 95% confidence interval.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="createAicTable.html">createAicTable</a></code>, <code><a href="predict.occMod.html">predict.occMod</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

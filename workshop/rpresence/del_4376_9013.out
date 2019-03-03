@@ -1,0 +1,1964 @@
+
+
+PRESENCE - Presence/Absence-Site Occupancy data analysis
+Fri Mar 01 12:10:16 2019,       Version 2.12.17.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+==>realbetavc
+==>quiet
+==>maxfn=32000
+==>name=psi(ABC)p()
+==>lmt=1
+varcov: nsig=6 eps=1.000000e-002
+
+
+
+
+********* Input Data summary *******
+Number of sites                = 1839
+Number of sampling occasions   = 7
+Number of states               = 2
+Number of missing observations = 0
+Data checksum = 20082
+
+NSiteCovs-->3
+site_covname[0]=psi.int
+site_covname[1]=psi.ABCB
+site_covname[2]=psi.ABCC
+NSampCovs-->1
+samp_covname[0]=p.int
+Primary periods=1 Secondary periods: 7
+Naive occupancy estimate       = 0.1289
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Bobcat example
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+N=1839 T=7 Groups=1 bootstraps=0
+
+Matrix 1: rows=2, cols=4
+            -,a1,a2,a3
+psi            1  psi.ABCB  psi.ABCC
+========================
+
+Matrix 2: rows=8, cols=2
+            -,b1
+p1             1
+p2             1
+p3             1
+p4             1
+p5             1
+p6             1
+p7             1
+========================
+
+Matrix 3: rows=0, cols=0
+========================
+
+Matrix 4: rows=0, cols=0
+========================
+
+Matrix 5: rows=0, cols=0
+========================
+
+Matrix 6: rows=0, cols=0
+========================
+
+modtype=1
+
+Custom Model: psi(ABC)p()
+
+attempt 0/0 (iv= 0.00  0.00  0.00...), optmiz done. -2loglike=2887.7524
+0 random initial value vectors attempted:
+Initial values:
+    0.0000    0.0000    0.0000    0.0000
+Number of significant digits   =   7.1
+
+Model has been fit using the logistic link.
+
+
+Number of parameters           = 4
+Number of function calls           = 139
+-2log(likelihood)              = 2887.7524
+AIC                            = 2895.7524
+
+Untransformed Estimates of coefficients for covariates (Beta's)
+======================================================================
+                                          estimate    std.error
+A1   psi                              :  -0.491637    0.138565
+A2   psi.psi.ABCB                     :  -1.636404    0.203186
+A3   psi.psi.ABCC                     :  -1.587857    0.202047
+B1   p1                               :  -1.842188    0.092462
+
+Variance-Covariance Matrix of Untransformed estimates (Beta's):
+              A1         A2         A3         B1  
+     A1    0.019200  -0.014839  -0.014816  -0.007328
+     A2   -0.014839   0.041284   0.013500   0.002239
+     A3   -0.014816   0.013500   0.040823   0.002213
+     B1   -0.007328   0.002239   0.002213   0.008549
+------------------------------
+
+============================================================
+
+   Individual Site estimates of <psi>
+                Site               estimate  Std.err   95% conf. interval
+psi             1 C & O Canal 10A :  0.3795   0.0326     0.3179 -  0.4452
+
+============================================================
+
+   Individual Site estimates of <p1>
+                Site               estimate  Std.err   95% conf. interval
+p1              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p2              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p3              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p4              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p5              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p6              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+p7              1 C & O Canal 10A :  0.1368   0.0109     0.1168 -  0.1596
+
+============================================================
+
+
+ DERIVED parameter - Psi-conditional = [Pr(occ | detection history)]
+
+        Site                     psi-cond  Std.err     95% conf. interval
+psi-cond     1 C & O Canal 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond     2 C & O Canal 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond     3 C & O Canal 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond     4 C & O Canal 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond     5 C & O Canal 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond     6 C & O Canal 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond     7 C & O Canal 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond     8 C & O Canal 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond     9 C & O Canal 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    10 C & O Canal 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    11 C & O Canal 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    12 C & O Canal 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    13 C & O Canal 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    14 C & O Canal 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    15 C & O Canal 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    16 C & O Canal 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    17 C & O Canal 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    18 C & O Canal 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    19 C & O Canal 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    20 C & O Canal 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    21 C & O Canal 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    22 C & O Canal 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    23 C & O Canal 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    24 C & O Canal 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    25 C & O Canal 26C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    26 C & O Canal 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    27 C & O Canal 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    28 C & O Canal 29A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    29 C & O Canal 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    30 C & O Canal 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    31 C & O Canal 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    32 C & O Canal 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    33 C & O Canal 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    34 C & O Canal 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    35 C & O Canal 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    36 C & O Canal 33B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    37 C & O Canal 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    38 C & O Canal 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    39 C & O Canal 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    40 C & O Canal 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    41 C & O Canal 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    42 C & O Canal 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    43 C & O Canal 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    44 C & O Canal 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    45 C & O Canal 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    46 C & O Canal 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    47 C & O Canal 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    48 C & O Canal 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    49 C & O Canal 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    50 C & O Canal 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    51 C & O Canal 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    52 C & O Canal 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    53 C & O Canal 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    54 C & O Canal 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    55 C & O Canal 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    56 C & O Canal 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    57 C. Shenandoah 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    58 C. Shenandoah 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    59 C. Shenandoah 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    60 C. Shenandoah 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    61 C. Shenandoah 12B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    62 C. Shenandoah 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    63 C. Shenandoah 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    64 C. Shenandoah 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    65 C. Shenandoah 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    66 C. Shenandoah 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    67 C. Shenandoah 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    68 C. Shenandoah 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    69 C. Shenandoah 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    70 C. Shenandoah 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    71 C. Shenandoah 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    72 C. Shenandoah 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    73 C. Shenandoah 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    74 C. Shenandoah 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    75 C. Shenandoah 1A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    76 C. Shenandoah 1B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    77 C. Shenandoah 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    78 C. Shenandoah 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    79 C. Shenandoah 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    80 C. Shenandoah 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    81 C. Shenandoah 27A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    82 C. Shenandoah 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    83 C. Shenandoah 27C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    84 C. Shenandoah 28A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    85 C. Shenandoah 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    86 C. Shenandoah 29A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    87 C. Shenandoah 29B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    88 C. Shenandoah 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    89 C. Shenandoah 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    90 C. Shenandoah 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    91 C. Shenandoah 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    92 C. Shenandoah 31A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    93 C. Shenandoah 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    94 C. Shenandoah 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond    95 C. Shenandoah 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond    96 C. Shenandoah 4A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    97 C. Shenandoah 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond    98 C. Shenandoah 6B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond    99 C. Shenandoah 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   100 C. Shenandoah 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   101 C. Shenandoah 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   102 C. Shenandoah 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   103 C. Shenandoah 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   104 C. Shenandoah 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   105 C. Shenandoah 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   106 C. Shenandoah 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   107 C. Shenandoah 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   108 Carvins Cove 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   109 Carvins Cove 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   110 Carvins Cove 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   111 Carvins Cove 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   112 Carvins Cove 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   113 Carvins Cove 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   114 Carvins Cove 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   115 Carvins Cove 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   116 Carvins Cove 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   117 Carvins Cove 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   118 Carvins Cove 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   119 Carvins Cove 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   120 Carvins Cove 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   121 Carvins Cove 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   122 Carvins Cove 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   123 Carvins Cove 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   124 Carvins Cove 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   125 Carvins Cove 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   126 Carvins Cove 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   127 Carvins Cove 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   128 Carvins Cove 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   129 Carvins Cove 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   130 Carvins Cove 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   131 Carvins Cove 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   132 Carvins Cove 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   133 Carvins Cove 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   134 Carvins Cove 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   135 Carvins Cove 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   136 Carvins Cove 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   137 Carvins Cove 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   138 Carvins Cove 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   139 Carvins Cove 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   140 Carvins Cove 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   141 Carvins Cove 32A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   142 Carvins Cove 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   143 Carvins Cove 32C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   144 Carvins Cove 33B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   145 Carvins Cove 33C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   146 Carvins Cove 34A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   147 Carvins Cove 34B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   148 Carvins Cove 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   149 Carvins Cove 36A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   150 Carvins Cove 36B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   151 Carvins Cove 36C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   152 Carvins Cove 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   153 Carvins Cove 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   154 Carvins Cove 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   155 Carvins Cove 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   156 Carvins Cove 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   157 Carvins Cove 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   158 Carvins Cove 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   159 Carvins Cove 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   160 Carvins Cove 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   161 Carvins Cove 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   162 Carvins Cove 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   163 Carvins Cove 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   164 Carvins Cove 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   165 Carvins Cove 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   166 Carvins Cove 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   167 Carvins Cove 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   168 Carvins Cove 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   169 Carvins Cove 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   170 Cato/Cunn 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   171 Cato/Cunn 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   172 Cato/Cunn 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   173 Cato/Cunn 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   174 Cato/Cunn 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   175 Cato/Cunn 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   176 Cato/Cunn 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   177 Cato/Cunn 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   178 Cato/Cunn 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   179 Cato/Cunn 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   180 Cato/Cunn 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   181 Cato/Cunn 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   182 Cato/Cunn 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   183 Cato/Cunn 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   184 Cato/Cunn 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   185 Cato/Cunn 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   186 Cato/Cunn 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   187 Cato/Cunn 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   188 Cato/Cunn 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   189 Cato/Cunn 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   190 Cato/Cunn 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   191 Cato/Cunn 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   192 Cato/Cunn 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   193 Cato/Cunn 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   194 Cato/Cunn 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   195 Cato/Cunn 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   196 Cato/Cunn 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   197 Cato/Cunn 26A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   198 Cato/Cunn 26B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   199 Cato/Cunn 26C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   200 Cato/Cunn 35A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   201 Cato/Cunn 35B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   202 Cato/Cunn 35C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   203 Cato/Cunn 51A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   204 Cato/Cunn 51B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   205 Cato/Cunn 54A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   206 Cato/Cunn 54B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   207 Cato/Cunn 54C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   208 Cato/Cunn 57A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   209 Cato/Cunn 57B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   210 Cato/Cunn 57C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   211 Cato/Cunn 59A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   212 Cato/Cunn 59B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   213 Cato/Cunn 59C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   214 Cato/Cunn 60A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   215 Cato/Cunn 60C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   216 Cato/Cunn 62A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   217 Cato/Cunn 62C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   218 Cato/Cunn 63A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   219 Cato/Cunn 63B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   220 Cato/Cunn 64A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   221 Cato/Cunn 64B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   222 Cato/Cunn 64C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   223 Cato/Cunn 65A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   224 Cato/Cunn 65B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   225 Cato/Cunn 65C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   226 Cato/Cunn 66A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   227 Cato/Cunn 66B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   228 Cato/Cunn 66C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   229 Cato/Cunn 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   230 Cato/Cunn 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   231 Cato/Cunn 72A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   232 Cato/Cunn 72B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   233 Cato/Cunn 73A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   234 Cato/Cunn 73B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   235 Cato/Cunn 73C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   236 Cato/Cunn 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   237 Cato/Cunn 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   238 Cato/Cunn 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   239 Cheraw 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   240 Cheraw 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   241 Cheraw 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   242 Cheraw 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   243 Cheraw 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   244 Cheraw 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   245 Cheraw 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   246 Cheraw 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   247 Cheraw 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   248 Cheraw 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   249 Cheraw 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   250 Cheraw 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   251 Cheraw 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   252 Cheraw 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   253 Cheraw 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   254 Cheraw 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   255 Cheraw 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   256 Cheraw 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   257 Cheraw 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   258 Cheraw 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   259 Cheraw 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   260 Cheraw 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   261 Cheraw 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   262 Cheraw 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   263 Cheraw 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   264 Cheraw 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   265 Cheraw 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   266 Cheraw 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   267 Cheraw 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   268 Cheraw 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   269 Cheraw 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   270 Cheraw 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   271 Cheraw 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   272 Cheraw 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   273 Cheraw 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   274 Cheraw 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   275 Cheraw 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   276 Cheraw 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   277 Cheraw 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   278 Cheraw 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   279 Cheraw 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   280 Cheraw 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   281 Cheraw 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   282 Cheraw 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   283 Cheraw 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   284 Cheraw 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   285 Cheraw 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   286 Cheraw 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   287 Cheraw 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   288 Cheraw 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   289 Cheraw 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   290 Cheraw 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   291 Cheraw 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   292 Cheraw 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   293 Cheraw 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   294 Cheraw 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   295 Cheraw 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   296 Cheraw 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   297 Fall Creek Falls 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   298 Fall Creek Falls 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   299 Fall Creek Falls 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   300 Fall Creek Falls 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   301 Fall Creek Falls 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   302 Fall Creek Falls 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   303 Fall Creek Falls 13A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   304 Fall Creek Falls 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   305 Fall Creek Falls 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   306 Fall Creek Falls 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   307 Fall Creek Falls 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   308 Fall Creek Falls 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   309 Fall Creek Falls 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   310 Fall Creek Falls 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   311 Fall Creek Falls 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   312 Fall Creek Falls 16A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   313 Fall Creek Falls 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   314 Fall Creek Falls 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   315 Fall Creek Falls 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   316 Fall Creek Falls 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   317 Fall Creek Falls 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   318 Fall Creek Falls 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   319 Fall Creek Falls 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   320 Fall Creek Falls 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   321 Fall Creek Falls 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   322 Fall Creek Falls 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   323 Fall Creek Falls 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   324 Fall Creek Falls 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   325 Fall Creek Falls 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   326 Fall Creek Falls 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   327 Fall Creek Falls 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   328 Fall Creek Falls 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   329 Fall Creek Falls 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   330 Fall Creek Falls 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   331 Fall Creek Falls 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   332 Fall Creek Falls 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   333 Fall Creek Falls 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   334 Fall Creek Falls 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   335 Fall Creek Falls 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   336 Fall Creek Falls 3A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   337 Fall Creek Falls 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   338 Fall Creek Falls 4A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   339 Fall Creek Falls 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   340 Fall Creek Falls 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   341 Fall Creek Falls 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   342 Fall Creek Falls 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   343 Fall Creek Falls 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   344 Fall Creek Falls 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   345 Fall Creek Falls 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   346 Fall Creek Falls 6C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   347 Fall Creek Falls 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   348 Fall Creek Falls 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   349 Fall Creek Falls 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   350 Fall Creek Falls 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   351 Fall Creek Falls 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   352 Fall Creek Falls 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   353 Fall Creek Falls 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   354 Fall Creek Falls 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   355 Fall Creek Falls 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   356 Frozen Head Hunted 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   357 Frozen Head Hunted 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   358 Frozen Head Hunted 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   359 Frozen Head Hunted 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   360 Frozen Head Hunted 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   361 Frozen Head Hunted 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   362 Frozen Head Hunted 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   363 Frozen Head Hunted 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   364 Frozen Head Hunted 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   365 Frozen Head Hunted 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   366 Frozen Head Hunted 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   367 Frozen Head Hunted 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   368 Frozen Head Hunted 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   369 Frozen Head Hunted 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   370 Frozen Head Hunted 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   371 Frozen Head Hunted 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   372 Frozen Head Hunted 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   373 Frozen Head Hunted 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   374 Frozen Head Hunted 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   375 Frozen Head Hunted 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   376 Frozen Head Hunted 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   377 Frozen Head Hunted 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   378 Frozen Head Hunted 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   379 Frozen Head Hunted 20C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   380 Frozen Head Hunted 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   381 Frozen Head Hunted 21C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   382 Frozen Head Hunted 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   383 Frozen Head Hunted 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   384 Frozen Head Hunted 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   385 Frozen Head Hunted 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   386 Frozen Head Hunted 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   387 Frozen Head Hunted 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   388 Frozen Head Hunted 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   389 Frozen Head Hunted 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   390 Frozen Head Hunted 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   391 Frozen Head Hunted 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   392 Frozen Head Hunted 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   393 Frozen Head Hunted 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   394 Frozen Head Hunted 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   395 Frozen Head Hunted 4C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   396 Frozen Head Hunted 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   397 Frozen Head Hunted 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   398 Frozen Head Unhunted 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   399 Frozen Head Unhunted 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   400 Frozen Head Unhunted 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   401 Frozen Head Unhunted 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   402 Frozen Head Unhunted 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   403 Frozen Head Unhunted 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   404 Frozen Head Unhunted 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   405 Frozen Head Unhunted 12B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   406 Frozen Head Unhunted 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   407 Frozen Head Unhunted 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   408 Frozen Head Unhunted 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   409 Frozen Head Unhunted 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   410 Frozen Head Unhunted 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   411 Frozen Head Unhunted 14B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   412 Frozen Head Unhunted 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   413 Frozen Head Unhunted 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   414 Frozen Head Unhunted 15B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   415 Frozen Head Unhunted 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   416 Frozen Head Unhunted 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   417 Frozen Head Unhunted 16B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   418 Frozen Head Unhunted 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   419 Frozen Head Unhunted 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   420 Frozen Head Unhunted 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   421 Frozen Head Unhunted 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   422 Frozen Head Unhunted 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   423 Frozen Head Unhunted 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   424 Frozen Head Unhunted 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   425 Frozen Head Unhunted 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   426 Frozen Head Unhunted 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   427 Frozen Head Unhunted 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   428 Frozen Head Unhunted 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   429 Frozen Head Unhunted 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   430 Frozen Head Unhunted 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   431 Frozen Head Unhunted 22A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   432 Frozen Head Unhunted 22B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   433 Frozen Head Unhunted 22C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   434 Frozen Head Unhunted 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   435 Frozen Head Unhunted 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   436 Frozen Head Unhunted 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   437 Frozen Head Unhunted 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   438 Frozen Head Unhunted 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   439 Frozen Head Unhunted 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   440 Frozen Head Unhunted 3A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   441 Frozen Head Unhunted 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   442 Frozen Head Unhunted 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   443 Frozen Head Unhunted 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   444 Frozen Head Unhunted 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   445 Frozen Head Unhunted 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   446 Frozen Head Unhunted 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   447 Frozen Head Unhunted 6A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   448 Frozen Head Unhunted 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   449 Frozen Head Unhunted 6C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   450 Frozen Head Unhunted 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   451 Frozen Head Unhunted 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   452 Frozen Head Unhunted 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   453 Frozen Head Unhunted 8A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   454 Frozen Head Unhunted 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   455 Frozen Head Unhunted 9A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   456 Frozen Head Unhunted 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   457 Frozen Head Unhunted 9C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   458 Gambrill 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   459 Gambrill 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   460 Gambrill 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   461 Gambrill 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   462 Gambrill 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   463 Gambrill 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   464 Gambrill 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   465 Gambrill 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   466 Gambrill 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   467 Gambrill 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   468 Gambrill 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   469 Gambrill 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   470 Gambrill 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   471 Gambrill 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   472 Gambrill 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   473 Gambrill 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   474 Gambrill 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   475 Gambrill 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   476 Gambrill 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   477 Gambrill 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   478 Gambrill 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   479 Gambrill 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   480 Gambrill 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   481 Gambrill 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   482 Gambrill 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   483 Gambrill 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   484 George Washington NF 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   485 George Washington NF 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   486 George Washington NF 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   487 George Washington NF 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   488 George Washington NF 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   489 George Washington NF 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   490 George Washington NF 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   491 George Washington NF 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   492 George Washington NF 14C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   493 George Washington NF 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   494 George Washington NF 15B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   495 George Washington NF 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   496 George Washington NF 16A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   497 George Washington NF 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   498 George Washington NF 18A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   499 George Washington NF 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   500 George Washington NF 19A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   501 George Washington NF 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   502 George Washington NF 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   503 George Washington NF 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   504 George Washington NF 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   505 George Washington NF 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   506 George Washington NF 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   507 George Washington NF 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   508 George Washington NF 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   509 George Washington NF 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   510 George Washington NF 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   511 George Washington NF 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   512 George Washington NF 30A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   513 George Washington NF 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   514 George Washington NF 30C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   515 George Washington NF 31A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   516 George Washington NF 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   517 George Washington NF 31C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   518 George Washington NF 32A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   519 George Washington NF 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   520 George Washington NF 32C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   521 George Washington NF 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   522 George Washington NF 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   523 George Washington NF 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   524 George Washington NF 4A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   525 George Washington NF 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   526 George Washington NF 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   527 George Washington NF 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   528 George Washington NF 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   529 George Washington NF 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   530 George Washington NF 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   531 George Washington NF 7B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   532 George Washington NF 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   533 George Washington NF 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   534 George Washington NF 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   535 George Washington NF 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   536 George Washington NF 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   537 Greenbelt Park 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   538 Greenbelt Park 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   539 Greenbelt Park 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   540 Greenbelt Park 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   541 Greenbelt Park 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   542 Greenbelt Park 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   543 Greenbelt Park 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   544 Greenbelt Park 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   545 Greenbelt Park 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   546 Greenbelt Park 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   547 Greenbelt Park 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   548 Greenbelt Park 26B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   549 Greenbelt Park 26C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   550 Greenbelt Park 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   551 Greenbelt Park 27C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   552 Greenbelt Park 28A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   553 Greenbelt Park 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   554 Greenbelt Park 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   555 Greenbelt Park 29A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   556 Greenbelt Park 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   557 Greenbelt Park 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   558 Greenbelt Park 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   559 Greenbelt Park 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   560 Greenbelt Park 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   561 Greenbelt Park 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   562 Greenbelt Park 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   563 Greenbelt Park 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   564 Greenbelt Park 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   565 Greenbelt Park 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   566 Greenbelt Park 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   567 Greenbelt Park 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   568 Greenbelt Park 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   569 Greenbelt Park 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   570 Greenbelt Park 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   571 Greenbelt Park 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   572 Greenbelt Park 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   573 Greenbelt Park 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   574 Greenbelt Park 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   575 Greenbelt Park 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   576 Greenbelt Park 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   577 Harpers Ferry NHP 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   578 Harpers Ferry NHP 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   579 Harpers Ferry NHP 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   580 Harpers Ferry NHP 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   581 Harpers Ferry NHP 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   582 Harpers Ferry NHP 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   583 Harpers Ferry NHP 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   584 Harpers Ferry NHP 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   585 Harpers Ferry NHP 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   586 Harpers Ferry NHP 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   587 Harpers Ferry NHP 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   588 Harpers Ferry NHP 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   589 Harpers Ferry NHP 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   590 Harpers Ferry NHP 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   591 Harpers Ferry NHP 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   592 Harpers Ferry NHP 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   593 Harpers Ferry NHP 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   594 Harpers Ferry NHP 3A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   595 Harpers Ferry NHP 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   596 Harpers Ferry NHP 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   597 Harpers Ferry NHP 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   598 Harpers Ferry NHP 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   599 Harpers Ferry NHP 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   600 Harpers Ferry NHP 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   601 Harpers Ferry NHP 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   602 Harpers Ferry NHP 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   603 Harpers Ferry NHP 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   604 Harpers Ferry NHP 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   605 Harpers Ferry NHP 7C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   606 Harpers Ferry NHP 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   607 Harpers Ferry NHP 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   608 Harpers Ferry NHP 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   609 Harpers Ferry NHP 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   610 Harpers Ferry NHP 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   611 Harpers Ferry NHP 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   612 Jefferson 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   613 Jefferson 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   614 Jefferson 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   615 Jefferson 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   616 Jefferson 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   617 Jefferson 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   618 Jefferson 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   619 Jefferson 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   620 Jefferson 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   621 Jefferson 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   622 Jefferson 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   623 Jefferson 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   624 Jefferson 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   625 Jefferson 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   626 Jefferson 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   627 Jefferson 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   628 Jefferson 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   629 Jefferson 24A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   630 Jefferson 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   631 Jefferson 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   632 Jefferson 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   633 Jefferson 25C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   634 Jefferson 26A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   635 Jefferson 26C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   636 Jefferson 27A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   637 Jefferson 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   638 Jefferson 27C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   639 Jefferson 28A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   640 Jefferson 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   641 Jefferson 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   642 Jefferson 30A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   643 Jefferson 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   644 Jefferson 31A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   645 Jefferson 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   646 Jefferson 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   647 Jefferson 32A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   648 Jefferson 34A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   649 Jefferson 34B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   650 Jefferson 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   651 Jefferson 37A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   652 Jefferson 38A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   653 Jefferson 38B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   654 Jefferson 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   655 Jefferson 4B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   656 Jefferson 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   657 Jefferson 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   658 Jefferson 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   659 Jefferson 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   660 Jefferson 6A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   661 Jefferson 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   662 Jefferson 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   663 Jefferson 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   664 Jefferson 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   665 Jefferson 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   666 Jefferson 8A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   667 Jefferson 8B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   668 Lone Mountain 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   669 Lone Mountain 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   670 Lone Mountain 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   671 Lone Mountain 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   672 Lone Mountain 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   673 Lone Mountain 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   674 Lone Mountain 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   675 Lone Mountain 13A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   676 Lone Mountain 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   677 Lone Mountain 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   678 Lone Mountain 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   679 Lone Mountain 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   680 Lone Mountain 17A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   681 Lone Mountain 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   682 Lone Mountain 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   683 Lone Mountain 18B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   684 Lone Mountain 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   685 Lone Mountain 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   686 Lone Mountain 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   687 Lone Mountain 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   688 Lone Mountain 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   689 Lone Mountain 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   690 Lone Mountain 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   691 Lone Mountain 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   692 Lone Mountain 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   693 Lone Mountain 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   694 Lone Mountain 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   695 Lone Mountain 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   696 Lone Mountain 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   697 Lone Mountain 2A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   698 Lone Mountain 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   699 Lone Mountain 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   700 Lone Mountain 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   701 Lone Mountain 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   702 Lone Mountain 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   703 Lone Mountain 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   704 Lone Mountain 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   705 Lone Mountain 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   706 Lone Mountain 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   707 Lone Mountain 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   708 Lone Mountain 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   709 Lone Mountain 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   710 Lone Mountain 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   711 Lone Mountain 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   712 Lone Mountain 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   713 Lone Mountain 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   714 Mason Neck 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   715 Mason Neck 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   716 Mason Neck 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   717 Mason Neck 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   718 Mason Neck 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   719 Mason Neck 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   720 Mason Neck 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   721 Mason Neck 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   722 Mason Neck 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   723 Mason Neck 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   724 Mason Neck 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   725 Mason Neck 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   726 Mason Neck 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   727 Mason Neck 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   728 Mason Neck 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   729 Mason Neck 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   730 Mason Neck 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   731 Mason Neck 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   732 Mason Neck 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   733 Mason Neck 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   734 Mason Neck 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   735 Mason Neck 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   736 Mason Neck 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   737 Mason Neck 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   738 Mason Neck 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   739 Mason Neck 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   740 Mason Neck 26A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   741 Mason Neck 26B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   742 Mason Neck 26C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   743 Mason Neck 27A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   744 Mason Neck 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   745 Mason Neck 28A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   746 Mason Neck 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   747 Mason Neck 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   748 Mason Neck 29A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   749 Mason Neck 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   750 Mason Neck 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   751 Mason Neck 30A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   752 Mason Neck 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   753 Mason Neck 30C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   754 Mason Neck 31A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   755 Mason Neck 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   756 Mason Neck 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   757 Mason Neck 32A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   758 Mason Neck 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   759 Mason Neck 32C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   760 Mason Neck 40A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   761 Mason Neck 40B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   762 Mason Neck 40C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   763 Mason Neck 42A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   764 Mason Neck 42B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   765 Mason Neck 42C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   766 Mason Neck 45A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   767 Mason Neck 45B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   768 Mason Neck 45C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   769 Mason Neck 46A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   770 Mason Neck 46B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   771 Mason Neck 46C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   772 Mason Neck 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   773 Mason Neck 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   774 Mason Neck 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   775 Mason Neck 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   776 Mason Neck 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   777 Mason Neck 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   778 Mason Neck 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   779 Mason Neck 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   780 Mason Neck 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   781 Mason Neck 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   782 Mason Neck 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   783 Mason Neck 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   784 Mason Neck 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   785 Mason Neck 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   786 Mason Neck 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   787 Morrow Mountain 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   788 Morrow Mountain 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   789 Morrow Mountain 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   790 Morrow Mountain 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   791 Morrow Mountain 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   792 Morrow Mountain 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   793 Morrow Mountain 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   794 Morrow Mountain 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   795 Morrow Mountain 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   796 Morrow Mountain 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   797 Morrow Mountain 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   798 Morrow Mountain 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   799 Morrow Mountain 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   800 Morrow Mountain 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   801 Morrow Mountain 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   802 Morrow Mountain 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   803 Morrow Mountain 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   804 Morrow Mountain 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   805 Morrow Mountain 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   806 Morrow Mountain 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   807 Morrow Mountain 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   808 Morrow Mountain 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   809 Morrow Mountain 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   810 Morrow Mountain 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   811 Morrow Mountain 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   812 Morrow Mountain 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   813 Morrow Mountain 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   814 Morrow Mountain 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   815 Morrow Mountain 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   816 Morrow Mountain 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   817 Morrow Mountain 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   818 Morrow Mountain 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   819 Morrow Mountain 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   820 Morrow Mountain 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   821 Morrow Mountain 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   822 Morrow Mountain 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   823 Morrow Mountain 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   824 Morrow Mountain 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   825 Morrow Mountain 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   826 Morrow Mountain 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   827 Morrow Mountain 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   828 Morrow Mountain 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   829 Morrow Mountain 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   830 Morrow Mountain 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   831 Morrow Mountain 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   832 Morrow Mountain 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   833 Morrow Mountain 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   834 Morrow Mountain 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   835 morrow mountain 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   836 Morrow Mountain 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   837 Morrow Mountain 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   838 Morrow Mountain 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   839 Morrow Mountain 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   840 Morrow Mountain 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   841 Morrow Mountain 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   842 Morrow Mountain 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   843 Morrow Mountain 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   844 Morrow Mountain 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   845 Morrow Mountain 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   846 Morrow Mountain 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   847 Morrow Mountain 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   848 Morrow Mountain 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   849 Prince William FP 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   850 Prince William FP 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   851 Prince William FP 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   852 Prince William FP 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   853 Prince William FP 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   854 Prince William FP 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   855 Prince William FP 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   856 Prince William FP 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   857 Prince William FP 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   858 Prince William FP 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   859 Prince William FP 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   860 Prince William FP 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   861 Prince William FP 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   862 Prince William FP 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   863 Prince William FP 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   864 Prince William FP 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   865 Prince William FP 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   866 Prince William FP 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   867 Prince William FP 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   868 Prince William FP 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   869 Prince William FP 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   870 Prince William FP 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   871 Prince William FP 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   872 Prince William FP 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   873 Prince William FP 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   874 Prince William FP 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   875 Prince William FP 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   876 Prince William FP 23A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond   877 Prince William FP 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   878 Prince William FP 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   879 Prince William FP 28A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   880 Prince William FP 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   881 Prince William FP 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   882 Prince William FP 29A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   883 Prince William FP 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   884 Prince William FP 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   885 Prince William FP 30A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   886 Prince William FP 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   887 Prince William FP 30C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   888 Prince William FP 32A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   889 Prince William FP 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   890 Prince William FP 32C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   891 Prince William FP 34A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   892 Prince William FP 34B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   893 Prince William FP 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   894 Prince William FP 36A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   895 Prince William FP 36B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   896 Prince William FP 36C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   897 Prince William FP 37A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   898 Prince William FP 37B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   899 Prince William FP 37C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   900 Prince William FP 38A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   901 Prince William FP 38B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   902 Prince William FP 38C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   903 Prince William FP 39A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   904 Prince William FP 39B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   905 Prince William FP 39C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   906 Prince William FP 41A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   907 Prince William FP 41B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   908 Prince William FP 41C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   909 Prince William FP 43A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   910 Prince William FP 43B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   911 Prince William FP 43C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   912 Prince William FP 45A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   913 Prince William FP 45B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   914 Prince William FP 45C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   915 Prince William FP 48A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   916 Prince William FP 48B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   917 Prince William FP 48C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   918 Prince William FP 51A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   919 Prince William FP 51B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   920 Prince William FP 51C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   921 Prince William FP 54B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   922 Prince William FP 54C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   923 Prince William FP 57A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   924 Prince William FP 57B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   925 Prince William FP 57C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   926 Prince William FP 59A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   927 Prince William FP 59B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   928 Prince William FP 59C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   929 Rock Creek Park 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   930 Rock Creek Park 10B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   931 Rock Creek Park 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   932 Rock Creek Park 10C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   933 Rock Creek Park 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   934 Rock Creek Park 11A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   935 Rock Creek Park 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   936 Rock Creek Park 11B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   937 Rock Creek Park 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   938 Rock Creek Park 11C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   939 Rock Creek Park 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   940 Rock Creek Park 12B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   941 Rock Creek Park 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   942 Rock Creek Park 12C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   943 Rock Creek Park 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   944 Rock Creek Park 13A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   945 Rock Creek Park 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   946 Rock Creek Park 13B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   947 Rock Creek Park 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   948 Rock Creek Park 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   949 Rock Creek Park 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   950 Rock Creek Park 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   951 Rock Creek Park 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   952 Rock Creek Park 15A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   953 Rock Creek Park 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   954 Rock Creek Park 15B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   955 Rock Creek Park 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   956 Rock Creek Park 15C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   957 Rock Creek Park 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   958 Rock Creek Park 16A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   959 Rock Creek Park 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   960 Rock Creek Park 16B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   961 Rock Creek Park 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   962 Rock Creek Park 16C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   963 Rock Creek Park 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   964 Rock Creek Park 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   965 Rock Creek Park 17B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   966 Rock Creek Park 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   967 Rock Creek Park 17C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   968 Rock Creek Park 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   969 Rock Creek Park 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   970 Rock Creek Park 19B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   971 Rock Creek Park 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   972 Rock Creek Park 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   973 Rock Creek Park 1B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   974 Rock Creek Park 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   975 Rock Creek Park 1C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   976 Rock Creek Park 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   977 Rock Creek Park 20A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   978 Rock Creek Park 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   979 Rock Creek Park 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   980 Rock Creek Park 21A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   981 Rock Creek Park 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   982 Rock Creek Park 21B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   983 Rock Creek Park 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   984 Rock Creek Park 21C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   985 Rock Creek Park 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   986 Rock Creek Park 22A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   987 Rock Creek Park 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   988 Rock Creek Park 22B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   989 Rock Creek Park 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   990 Rock Creek Park 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   991 Rock Creek Park 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   992 Rock Creek Park 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   993 Rock Creek Park 24A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   994 Rock Creek Park 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   995 Rock Creek Park 24B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond   996 Rock Creek Park 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   997 Rock Creek Park 24C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond   998 Rock Creek Park 26A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond   999 Rock Creek Park 26A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1000 Rock Creek Park 26B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1001 Rock Creek Park 26B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1002 Rock Creek Park 26C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1003 Rock Creek Park 27A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1004 Rock Creek Park 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1005 Rock Creek Park 27B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1006 Rock Creek Park 27C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1007 Rock Creek Park 27C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1008 Rock Creek Park 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1009 Rock Creek Park 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1010 Rock Creek Park 2B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1011 Rock Creek Park 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1012 Rock Creek Park 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1013 Rock Creek Park 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1014 Rock Creek Park 5B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1015 Rock Creek Park 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1016 Rock Creek Park 5C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1017 Rock Creek Park 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1018 Rock Creek Park 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1019 Rock Creek Park 7A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1020 Rock Creek Park 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1021 Rock Creek Park 7B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1022 Rock Creek Park 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1023 Rock Creek Park 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1024 Rock Creek Park 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1025 Rock Creek Park 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1026 S. Shenandoah 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1027 S. Shenandoah 11B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1028 S. Shenandoah 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1029 S. Shenandoah 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1030 S. Shenandoah 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1031 S. Shenandoah 13B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1032 S. Shenandoah 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1033 S. Shenandoah 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1034 S. Shenandoah 31A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1035 S. Shenandoah 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1036 S. Shenandoah 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1037 S. Shenandoah 32A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1038 S. Shenandoah 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1039 S. Shenandoah 32C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1040 S. Shenandoah 33A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1041 S. Shenandoah 33B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1042 S. Shenandoah 34A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1043 S. Shenandoah 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1044 S. Shenandoah 35A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1045 S. Shenandoah 35C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1046 S. Shenandoah 38A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1047 S. Shenandoah 39A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1048 S. Shenandoah 39B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1049 S. Shenandoah 40B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1050 S. Shenandoah 40C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1051 S. Shenandoah 42B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1052 S. Shenandoah 42C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1053 S. Shenandoah 43A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1054 S. shenandoah 43B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1055 S. Shenandoah 43C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1056 S. Shenandoah 44B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1057 S. Shenandoah 44C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1058 S. Shenandoah 45A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1059 S. Shenandoah 45B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1060 S. Shenandoah 46A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1061 S. Shenandoah 46B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1062 S. Shenandoah 46C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1063 S. Shenandoah 47A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1064 S. Shenandoah 47B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1065 S. Shenandoah 47C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1066 S. Shenandoah 48A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1067 S. Shenandoah 48B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1068 S. Shenandoah 48C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1069 S. Shenandoah 55A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1070 S. Shenandoah 55B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1071 S. Shenandoah 60A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1072 S. Shenandoah 60B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1073 S. Shenandoah 60C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1074 S. Shenandoah 63B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1075 S. Shenandoah 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1076 S. Shenandoah 9B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1077 S. Shenandoah 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1078 Sandhills 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1079 Sandhills 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1080 Sandhills 10C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1081 Sandhills 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1082 Sandhills 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1083 Sandhills 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1084 Sandhills 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1085 Sandhills 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1086 Sandhills 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1087 Sandhills 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1088 Sandhills 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1089 Sandhills 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1090 Sandhills 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1091 Sandhills 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1092 Sandhills 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1093 Sandhills 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1094 Sandhills 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1095 Sandhills 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1096 Sandhills 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1097 Sandhills 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1098 Sandhills 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1099 Sandhills 17C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1100 Sandhills 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1101 Sandhills 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1102 Sandhills 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1103 Sandhills 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1104 Sandhills 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1105 Sandhills 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1106 Sandhills 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1107 Sandhills 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1108 Sandhills 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1109 Sandhills 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1110 Sandhills 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1111 Sandhills 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1112 Sandhills 22A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1113 Sandhills 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1114 Sandhills 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1115 Sandhills 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1116 Sandhills 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1117 Sandhills 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1118 Sandhills 24A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1119 Sandhills 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1120 Sandhills 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1121 Sandhills 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1122 Sandhills 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1123 Sandhills 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1124 Sandhills 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1125 Sandhills 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1126 Sandhills 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1127 Sandhills 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1128 Sandhills 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1129 Sandhills 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1130 Sandhills 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1131 Sandhills 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1132 Sandhills 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1133 Sandhills 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1134 Sandhills 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1135 Sandhills 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1136 Sandhills 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1137 Shenandoah 11A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1138 Shenandoah 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1139 Shenandoah 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1140 Shenandoah 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1141 Shenandoah 12B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1142 Shenandoah 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1143 Shenandoah 13A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1144 Shenandoah 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1145 Shenandoah 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1146 Shenandoah 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1147 Shenandoah 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1148 Shenandoah 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1149 Shenandoah 16C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1150 Shenandoah 18A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1151 Shenandoah 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1152 Shenandoah 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1153 Shenandoah 19B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1154 Shenandoah 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1155 Shenandoah 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1156 Shenandoah 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1157 Shenandoah 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1158 Shenandoah 21B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1159 Shenandoah 21C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1160 Shenandoah 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1161 Shenandoah 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1162 Shenandoah 25A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1163 Shenandoah 26A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1164 Shenandoah 26C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1165 Shenandoah 29A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1166 Shenandoah 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1167 Shenandoah 29C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1168 Shenandoah 31A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1169 Shenandoah 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1170 Shenandoah 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1171 Shenandoah 33A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1172 Shenandoah 33B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1173 Shenandoah 33C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1174 Shenandoah 34A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1175 Shenandoah 34B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1176 Shenandoah 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1177 Shenandoah 40A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1178 Shenandoah 40B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1179 Shenandoah 40C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1180 Shenandoah 42A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1181 Shenandoah 42B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1182 Shenandoah 42C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1183 Shenandoah 43A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1184 Shenandoah 43C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1185 Shenandoah 44A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1186 Shenandoah 44B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1187 Shenandoah 44C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1188 Shenandoah 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1189 Shenandoah 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1190 South Mountains Gameland 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1191 South Mountains Gameland 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1192 South Mountains Gameland 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1193 South Mountains Gameland 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1194 South Mountains Gameland 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1195 South Mountains Gameland 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1196 South Mountains Gameland 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1197 South Mountains Gameland 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1198 South Mountains Gameland 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1199 South Mountains Gameland 14B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1200 South Mountains Gameland 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1201 South Mountains Gameland 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1202 South Mountains Gameland 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1203 South Mountains Gameland 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1204 South Mountains Gameland 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1205 South Mountains Gameland 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1206 South Mountains Gameland 17A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1207 South Mountains Gameland 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1208 South Mountains Gameland 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1209 South Mountains Gameland 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1210 South Mountains Gameland 19A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1211 South Mountains Gameland 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1212 South Mountains Gameland 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1213 South Mountains Gameland 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1214 South Mountains Gameland 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1215 South Mountains Gameland 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1216 South Mountains Gameland 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1217 South Mountains Gameland 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1218 South Mountains Gameland 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1219 South Mountains Gameland 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1220 South Mountains Gameland 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1221 South Mountains Gameland 22B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1222 South Mountains Gameland 22C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1223 South Mountains Gameland 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1224 South Mountains Gameland 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1225 South Mountains Gameland 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1226 South Mountains Gameland 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1227 South Mountains Gameland 2A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1228 South Mountains Gameland 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1229 South Mountains Gameland 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1230 South Mountains Gameland 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1231 South Mountains Gameland 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1232 South Mountains Gameland 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1233 South Mountains Gameland 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1234 South Mountains Gameland 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1235 South Mountains Gameland 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1236 South Mountains Gameland 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1237 South Mountains Gameland 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1238 South Mountains Gameland 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1239 South Mountains Gameland 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1240 South Mountains Gameland 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1241 South Mountains Gameland 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1242 South Mountains Gameland 8A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1243 South Mountains Gameland 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1244 South Mountains Gameland 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1245 South Mountains Gameland 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1246 South Mountains State Park 10A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1247 South Mountains State Park 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1248 South Mountains State Park 11A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1249 South Mountains State Park 11B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1250 South Mountains State Park 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1251 South Mountains State Park 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1252 South Mountains State Park 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1253 South Mountains State Park 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1254 South Mountains State Park 13A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1255 South Mountains State Park 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1256 South Mountains State Park 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1257 South Mountains State Park 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1258 South Mountains State Park 14B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1259 South Mountains State Park 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1260 South Mountains State Park 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1261 South Mountains State Park 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1262 South Mountains State Park 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1263 South Mountains State Park 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1264 South Mountains State Park 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1265 South Mountains State Park 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1266 South Mountains State Park 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1267 South Mountains State Park 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1268 South Mountains State Park 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1269 South Mountains State Park 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1270 South Mountains State Park 1A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1271 South Mountains State Park 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1272 South Mountains State Park 1C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1273 South Mountains State Park 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1274 South Mountains State Park 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1275 South Mountains State Park 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1276 South Mountains State Park 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1277 South Mountains State Park 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1278 South Mountains State Park 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1279 South Mountains State Park 22A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1280 South Mountains State Park 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1281 South Mountains State Park 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1282 South Mountains State Park 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1283 South Mountains State Park 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1284 South Mountains State Park 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1285 South Mountains State Park 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1286 South Mountains State Park 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1287 South Mountains State Park 2A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1288 South Mountains State Park 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1289 South Mountains State Park 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1290 South Mountains State Park 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1291 South Mountains State Park 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1292 South Mountains State Park 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1293 South Mountains State Park 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1294 South Mountains State Park 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1295 South Mountains State Park 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1296 South Mountains State Park 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1297 South Mountains State Park 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1298 South Mountains State Park 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1299 South Mountains State Park 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1300 Stone Mountain 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1301 Stone Mountain 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1302 Stone Mountain 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1303 Stone Mountain 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1304 Stone Mountain 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1305 Stone Mountain 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1306 Stone Mountain 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1307 Stone Mountain 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1308 Stone Mountain 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1309 Stone Mountain 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1310 Stone Mountain 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1311 Stone Mountain 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1312 Stone Mountain 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1313 Stone Mountain 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1314 Stone Mountain 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1315 Stone Mountain 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1316 Stone Mountain 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1317 Stone Mountain 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1318 Stone Mountain 16C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1319 Stone Mountain 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1320 Stone Mountain 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1321 Stone Mountain 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1322 Stone Mountain 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1323 Stone Mountain 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1324 Stone Mountain 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1325 Stone Mountain 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1326 Stone Mountain 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1327 Stone Mountain 1A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1328 Stone Mountain 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1329 Stone Mountain 1C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1330 Stone Mountain 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1331 Stone Mountain 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1332 Stone Mountain 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1333 Stone Mountain 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1334 Stone Mountain 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1335 Stone Mountain 22A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1336 Stone Mountain 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1337 Stone Mountain 23A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1338 Stone Mountain 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1339 Stone Mountain 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1340 Stone Mountain 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1341 Stone Mountain 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1342 Stone Mountain 2A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1343 Stone Mountain 2C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1344 Stone Mountain 3A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1345 Stone Mountain 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1346 Stone Mountain 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1347 Stone Mountain 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1348 Stone Mountain 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1349 Stone Mountain 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1350 Stone Mountain 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1351 Stone Mountain 6A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1352 Stone Mountain 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1353 Stone Mountain 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1354 Stone Mountain 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1355 Stone Mountain 7C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1356 Stone Mountain 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1357 Thompson WMA  37C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1358 Thompson WMA 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1359 Thompson WMA 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1360 Thompson WMA 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1361 Thompson WMA 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1362 Thompson WMA 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1363 Thompson WMA 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1364 Thompson WMA 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1365 Thompson WMA 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1366 Thompson WMA 14A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1367 Thompson WMA 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1368 Thompson WMA 14B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1369 Thompson WMA 14C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1370 Thompson WMA 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1371 Thompson WMA 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1372 Thompson WMA 15C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1373 Thompson WMA 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1374 Thompson WMA 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1375 Thompson WMA 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1376 Thompson WMA 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1377 Thompson WMA 17A-2        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1378 Thompson WMA 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1379 Thompson WMA 17B-2        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1380 Thompson WMA 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1381 Thompson WMA 17C-2        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1382 Thompson WMA 18A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1383 Thompson WMA 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1384 Thompson WMA 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1385 Thompson WMA 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1386 Thompson WMA 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1387 Thompson WMA 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1388 Thompson WMA 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1389 Thompson WMA 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1390 Thompson WMA 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1391 Thompson WMA 21A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1392 Thompson WMA 21B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1393 Thompson WMA 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1394 Thompson WMA 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1395 Thompson WMA 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1396 Thompson WMA 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1397 Thompson WMA 24A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1398 Thompson WMA 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1399 Thompson WMA 25A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1400 Thompson WMA 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1401 Thompson WMA 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1402 Thompson WMA 30A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1403 Thompson WMA 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1404 Thompson WMA 30C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1405 Thompson WMA 31A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1406 Thompson WMA 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1407 Thompson WMA 31C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1408 Thompson WMA 33A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1409 Thompson WMA 33B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1410 Thompson WMA 33C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1411 Thompson WMA 34A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1412 Thompson WMA 34B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1413 Thompson WMA 34C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1414 Thompson WMA 36A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1415 Thompson WMA 36B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1416 Thompson WMA 36C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1417 Thompson WMA 37A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1418 Thompson WMA 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1419 Thompson WMA 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1420 Thompson WMA 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1421 Thompson WMA 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1422 Thompson WMA 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1423 Thompson WMA 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1424 Thompson WMA 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1425 Thompson WMA 9C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1426 Thurmond Chatham 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1427 Thurmond Chatham 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1428 Thurmond Chatham 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1429 Thurmond Chatham 12A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1430 Thurmond Chatham 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1431 Thurmond Chatham 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1432 Thurmond Chatham 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1433 Thurmond Chatham 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1434 Thurmond Chatham 14A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1435 Thurmond Chatham 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1436 Thurmond Chatham 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1437 Thurmond Chatham 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1438 Thurmond Chatham 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1439 Thurmond Chatham 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1440 Thurmond Chatham 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1441 Thurmond Chatham 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1442 Thurmond Chatham 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1443 Thurmond Chatham 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1444 Thurmond Chatham 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1445 Thurmond Chatham 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1446 Thurmond Chatham 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1447 Thurmond Chatham 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1448 Thurmond Chatham 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1449 Thurmond Chatham 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1450 Thurmond Chatham 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1451 Thurmond Chatham 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1452 Thurmond Chatham 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1453 Thurmond Chatham 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1454 Thurmond Chatham 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1455 Thurmond Chatham 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1456 Thurmond Chatham 22B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1457 Thurmond Chatham 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1458 Thurmond Chatham 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1459 Thurmond Chatham 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1460 Thurmond Chatham 23C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1461 Thurmond Chatham 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1462 Thurmond Chatham 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1463 Thurmond Chatham 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1464 Thurmond Chatham 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1465 Thurmond Chatham 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1466 Thurmond Chatham 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1467 Thurmond Chatham 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1468 Thurmond Chatham 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1469 Thurmond Chatham 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1470 Thurmond Chatham 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1471 Thurmond Chatham 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1472 Thurmond Chatham 6A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1473 Thurmond Chatham 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1474 Thurmond Chatham 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1475 Thurmond Chatham 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1476 Thurmond Chatham 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1477 Thurmond Chatham 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1478 Thurmond Chatham 8A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1479 Thurmond Chatham 8C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1480 Thurmond Chatham 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1481 Thurmond Chatham 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1482 Umstead 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1483 Umstead 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1484 Umstead 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1485 Umstead 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1486 Umstead 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1487 Umstead 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1488 Umstead 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1489 Umstead 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1490 Umstead 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1491 Umstead 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1492 Umstead 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1493 Umstead 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1494 Umstead 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1495 Umstead 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1496 Umstead 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1497 Umstead 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1498 Umstead 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1499 Umstead 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1500 Umstead 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1501 Umstead 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1502 Umstead 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1503 Umstead 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1504 Umstead 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1505 Umstead 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1506 Umstead 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1507 Umstead 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1508 Umstead 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1509 Umstead 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1510 Umstead 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1511 Umstead 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1512 Umstead 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1513 Umstead 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1514 Umstead 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1515 Umstead 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1516 Umstead 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1517 Umstead 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1518 Umstead 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1519 Umstead 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1520 Umstead 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1521 Umstead 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1522 Umstead 25A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1523 Umstead 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1524 Umstead 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1525 Umstead 26A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1526 Umstead 26B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1527 Umstead 27A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1528 Umstead 27B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1529 Umstead 28A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1530 Umstead 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1531 Umstead 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1532 Umstead 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1533 Umstead 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1534 Umstead 30A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1535 Umstead 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1536 Umstead 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1537 Umstead 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1538 Umstead 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1539 Umstead 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1540 Umstead 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1541 Umstead 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1542 Umstead 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1543 Umstead 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1544 Umstead 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1545 Umstead 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1546 Umstead 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1547 Umstead 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1548 Uwharrie 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1549 Uwharrie 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1550 Uwharrie 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1551 Uwharrie 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1552 Uwharrie 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1553 Uwharrie 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1554 Uwharrie 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1555 Uwharrie 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1556 Uwharrie 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1557 Uwharrie 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1558 Uwharrie 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1559 Uwharrie 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1560 Uwharrie 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1561 Uwharrie 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1562 Uwharrie 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1563 Uwharrie 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1564 Uwharrie 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1565 Uwharrie 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1566 Uwharrie 17A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1567 Uwharrie 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1568 Uwharrie 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1569 Uwharrie 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1570 Uwharrie 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1571 Uwharrie 19A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1572 Uwharrie 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1573 Uwharrie 19C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1574 Uwharrie 1A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1575 Uwharrie 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1576 Uwharrie 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1577 Uwharrie 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1578 Uwharrie 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1579 Uwharrie 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1580 Uwharrie 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1581 Uwharrie 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1582 Uwharrie 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1583 Uwharrie 22A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1584 Uwharrie 22C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1585 Uwharrie 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1586 Uwharrie 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1587 Uwharrie 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1588 Uwharrie 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1589 Uwharrie 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1590 Uwharrie 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1591 Uwharrie 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1592 Uwharrie 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1593 Uwharrie 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1594 Uwharrie 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1595 Uwharrie 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1596 Uwharrie 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1597 Uwharrie 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1598 Uwharrie 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1599 Uwharrie 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1600 Uwharrie 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1601 Uwharrie 6A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1602 Uwharrie 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1603 Uwharrie 6C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1604 Uwharrie 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1605 Uwharrie 7B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1606 Uwharrie 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1607 Uwharrie 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1608 Uwharrie 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1609 Uwharrie 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1610 Uwharrie 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1611 Uwharrie 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1612 Uwharrie 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1613 Warm Springs Hunt 10A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1614 Warm Springs Hunt 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1615 Warm Springs Hunt 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1616 Warm Springs Hunt 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1617 Warm Springs Hunt 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1618 Warm Springs Hunt 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1619 Warm Springs Hunt 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1620 Warm Springs Hunt 14B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1621 Warm Springs Hunt 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1622 Warm Springs Hunt 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1623 Warm Springs Hunt 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1624 Warm Springs Hunt 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1625 Warm Springs Hunt 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1626 Warm Springs Hunt 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1627 Warm Springs Hunt 17B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1628 Warm Springs Hunt 17C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1629 Warm Springs Hunt 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1630 Warm Springs Hunt 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1631 Warm Springs Hunt 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1632 Warm Springs Hunt 19A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1633 Warm Springs Hunt 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1634 Warm Springs Hunt 19C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1635 Warm Springs Hunt 1A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1636 Warm Springs Hunt 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1637 Warm Springs Hunt 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1638 Warm Springs Hunt 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1639 Warm Springs Hunt 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1640 Warm Springs Hunt 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1641 Warm Springs Hunt 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1642 Warm Springs Hunt 29A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1643 Warm Springs Hunt 29B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1644 Warm Springs Hunt 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1645 Warm Springs Hunt 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1646 Warm Springs Hunt 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1647 Warm Springs Hunt 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1648 Warm Springs Hunt 30B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1649 Warm Springs Hunt 30C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1650 Warm Springs Hunt 31A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1651 Warm Springs Hunt 31B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1652 Warm Springs Hunt 31C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1653 Warm Springs Hunt 32A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1654 Warm Springs Hunt 32C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1655 Warm Springs Hunt 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1656 Warm Springs Hunt 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1657 Warm Springs Hunt 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1658 Warm Springs Hunt 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1659 Warm Springs Hunt 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1660 Warm Springs Hunt 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1661 Warm Springs Hunt 6B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1662 Warm Springs Hunt 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1663 Warm Springs Hunt 7B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1664 Warm Springs Hunt 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1665 Warm Springs Hunt 8A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1666 Warm Springs Hunt 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1667 Warm Springs Hunt 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1668 Warm Springs Hunt 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1669 Warm Springs Hunt 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1670 Warm Springs Non-Hunt 40A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1671 Warm Springs Non-Hunt 40C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1672 Warm Springs Non-Hunt 41A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1673 Warm Springs Non-Hunt 42A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1674 Warm Springs Non-Hunt 43A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1675 Warm Springs Non-Hunt 43C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1676 Warm Springs Non-Hunt 44A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1677 Warm Springs Non-Hunt 44B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1678 Warm Springs Non-Hunt 44C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1679 Warm Springs Non-Hunt 45A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1680 Warm Springs Non-Hunt 45B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1681 Warm Springs Non-Hunt 45C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1682 Warm Springs Non-Hunt 46A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1683 Warm Springs Non-Hunt 46B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1684 Warm Springs Non-Hunt 46C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1685 Warm Springs Non-Hunt 47A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1686 Warm Springs Non-Hunt 47B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1687 Warm Springs Non-Hunt 47C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1688 Warm Springs Non-Hunt 48A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1689 Warm Springs Non-Hunt 48B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1690 Warm Springs Non-Hunt 48C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1691 Warm Springs Non-Hunt 49A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1692 Warm Springs Non-Hunt 49B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1693 Warm Springs Non-Hunt 49C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1694 Warm Springs Non-Hunt 50A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1695 Warm Springs Non-Hunt 50B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1696 Warm Springs Non-Hunt 50C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1697 Warm Springs Non-Hunt 51A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1698 Warm Springs Non-Hunt 51B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1699 Warm Springs Non-Hunt 51C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1700 Warm Springs Non-Hunt 52A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1701 Warm Springs Non-Hunt 52B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1702 Warm Springs Non-Hunt 53A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1703 Warm Springs Non-Hunt 53B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1704 Warm Springs Non-Hunt 53C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1705 Warm Springs Non-Hunt 54A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1706 Warm Springs Non-Hunt 54B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1707 Warm Springs Non-Hunt 54C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1708 Warm Springs Non-Hunt 55A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1709 Warm Springs Non-Hunt 55C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1710 Warm Springs Non-Hunt 56A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1711 Warm Springs Non-Hunt 56C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1712 Warm Springs Non-Hunt 57A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1713 Warm Springs Non-Hunt 57B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1714 Warm Springs Non-Hunt 58A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1715 Warm Springs Non-Hunt 58B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1716 Warm Springs Non-Hunt 59A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1717 Warm Springs Non-Hunt 59B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1718 Warm Springs Non-Hunt 59C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1719 Warm Springs Non-Hunt 60A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1720 Warm Springs Non-Hunt 60B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1721 Warm Springs Non-Hunt 60C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1722 Warm Springs Non-Hunt 61A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1723 Warm Springs Non-Hunt 61B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1724 Warm Springs Non-Hunt 62A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1725 Warm Springs Non-Hunt 62B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1726 Warm Springs Non-Hunt 62C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1727 Warm Springs Non-Hunt 63A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1728 Warm Springs Non-Hunt 63B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1729 Warm Springs Non-Hunt 63C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1730 Weymouth Woods 11A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1731 Weymouth Woods 11B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1732 Weymouth Woods 11C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1733 Weymouth Woods 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1734 Weymouth Woods 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1735 Weymouth Woods 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1736 Weymouth Woods 13A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1737 Weymouth Woods 13B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1738 Weymouth Woods 13C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1739 Weymouth Woods 15A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1740 Weymouth Woods 15B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1741 Weymouth Woods 16A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1742 Weymouth Woods 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1743 Weymouth Woods 16C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1744 Weymouth Woods 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1745 Weymouth Woods 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1746 Weymouth Woods 18A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1747 Weymouth Woods 18B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1748 Weymouth Woods 18C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1749 Weymouth Woods 19B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1750 Weymouth Woods 1A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1751 Weymouth Woods 1B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1752 Weymouth Woods 1C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1753 Weymouth Woods 20A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1754 Weymouth Woods 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1755 Weymouth Woods 20C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1756 Weymouth Woods 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1757 Weymouth Woods 21B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1758 Weymouth Woods 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1759 Weymouth Woods 23A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1760 Weymouth Woods 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1761 Weymouth Woods 23C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1762 Weymouth Woods 24A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1763 Weymouth Woods 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1764 Weymouth Woods 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1765 Weymouth Woods 2A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1766 Weymouth Woods 2B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1767 Weymouth Woods 2C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1768 Weymouth Woods 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1769 Weymouth Woods 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1770 Weymouth Woods 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1771 Weymouth Woods 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1772 Weymouth Woods 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1773 Weymouth Woods 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1774 Weymouth Woods 5A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1775 Weymouth Woods 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1776 Weymouth Woods 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1777 Weymouth Woods 7A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1778 Weymouth Woods 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1779 Weymouth Woods 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1780 Weymouth Woods 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1781 Weymouth Woods 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1782 Weymouth Woods 9A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1783 Weymouth Woods 9B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1784 Weymouth Woods 9C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1785 Wintergreen 10A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1786 Wintergreen 10B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1787 Wintergreen 10C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1788 Wintergreen 12A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1789 Wintergreen 12B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1790 Wintergreen 12C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1791 Wintergreen 14A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1792 Wintergreen 14C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1793 Wintergreen 15A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1794 Wintergreen 15B        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1795 Wintergreen 15C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1796 Wintergreen 16A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1797 Wintergreen 16B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1798 Wintergreen 17A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1799 Wintergreen 17B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1800 Wintergreen 17C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1801 Wintergreen 20A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1802 Wintergreen 20B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1803 Wintergreen 21A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1804 Wintergreen 21C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1805 Wintergreen 23A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1806 Wintergreen 23B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1807 Wintergreen 24A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1808 Wintergreen 24B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1809 Wintergreen 24C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1810 Wintergreen 25A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1811 Wintergreen 25B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1812 Wintergreen 25C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1813 Wintergreen 28A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1814 Wintergreen 28B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1815 Wintergreen 28C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1816 Wintergreen 29A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1817 Wintergreen 29C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1818 Wintergreen 30A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1819 Wintergreen 30B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1820 Wintergreen 30C        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1821 Wintergreen 31A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1822 Wintergreen 32B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1823 Wintergreen 33A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1824 Wintergreen 3A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1825 Wintergreen 3B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1826 Wintergreen 3C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1827 Wintergreen 4A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1828 Wintergreen 4B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1829 Wintergreen 4C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1830 Wintergreen 5A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1831 Wintergreen 5B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1832 Wintergreen 5C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1833 Wintergreen 7A        :   1.0000  0.0000     1.0000 - 1.0000 
+psi-cond  1834 Wintergreen 7B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1835 Wintergreen 7C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1836 Wintergreen 8A        :   0.1793  0.0298     0.1280 - 0.2452 
+psi-cond  1837 Wintergreen 8B        :   0.0408  0.0086     0.0269 - 0.0614 
+psi-cond  1838 Wintergreen 8C        :   0.0427  0.0090     0.0282 - 0.0642 
+psi-cond  1839 Wintergreen 9A        :   1.0000  0.0000     1.0000 - 1.0000 
+
+CPU time= 16 seconds (0.27 min)
+

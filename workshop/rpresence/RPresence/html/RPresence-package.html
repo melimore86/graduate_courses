@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: R Interface for Program PRESENCE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for RPresence-package {RPresence}"><tr><td>RPresence-package {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>R Interface for Program PRESENCE</h2>
+
+<h3>Description</h3>
+
+<p>Provide an R interface for running some of the occupancy models available in
+Program PRESENCE (<a href="http://www.mbr-pwrc.usgs.gov/software/presence.html">http://www.mbr-pwrc.usgs.gov/software/presence.html</a>),
+plus some additional helpful routines.
+</p>
+
+
+<h3>Details</h3>
+
+<p>details:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+Package: </td><td style="text-align: left;"> RPresence</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Type: </td><td style="text-align: left;"> Package</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Date: </td><td style="text-align: left;"> 2017-11-27</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+License: </td><td style="text-align: left;"> GPL-2</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie and Jim Hines
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# load a csv file with detection-histories
+filename&lt;-system.file("extdata/Blue_Ridge_pg99.csv",package="RPresence")
+salmdr.csv&lt;-read.csv(filename,header=FALSE)
+
+# Create PRESENCE input file object from csv
+salmdr.data&lt;-createPao(salmdr.csv,paoname="salmdr.pao")
+
+## fit some models
+mod1&lt;-occMod(model=list(psi~1,p~SURVEY),data=salmdr.data,type="so")
+mod2&lt;-occMod(model=list(psi~1,p~1)     ,data=salmdr.data,type="so")
+
+## create AIC table
+models&lt;-list(mod1,mod2)
+results&lt;-createAicTable(models)
+summary(results)
+
+## print real estimates (for 1st site only)
+cat('========== Model: psi(.)p(SURVEY) -\n')
+cat('   psi:\n'); print(fitted(mod1,'psi')[1,]) # print 1st site psi estimates
+i=which(!duplicated(fitted(mod1,'p')$est))      #  get survey-specific p estimates
+cat('   p  :\n'); print(fitted(mod1,'p')[i,])   # print 1st site p estimates
+cat('========== Model: psi(.)p(.)      -\n')
+cat('   psi:\n'); print(fitted(mod2,'psi')[1,]) # print 1st site psi estimates
+cat('   p  :\n'); print(fitted(mod2,'p')[1,])   # print 1st site p estimates
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

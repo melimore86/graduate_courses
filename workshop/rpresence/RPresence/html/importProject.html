@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Import a PRESENCE project into R.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for importProject {RPresence}"><tr><td>importProject {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Import a PRESENCE project into R.</h2>
+
+<h3>Description</h3>
+
+<p>Imports the results stored in a PRESENCE project folder into R as an <code>aic.table</code>
+object. Note that in this package version the code has only been developed to import
+static occupancy/single-season models, and the first and fourth parameterisation of the
+dynamic occupancy/multi-season models. Because design matrices in PRESENCE are constructed
+manually, and can be done in multiple ways, no attempt has been made to second-guess the
+intended model stucture with respect to covariates. Therefore predictions can not be made
+from imported models (unless manually reconfigured), although model averaged estimates of
+real parameters of the surveyed units can be obtained.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+importProject(pa3)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pa3</code></td>
+<td>
+<p>a string containing the path (if outside of the current working directory)
+and file name of the PRESENCE project summary file with the extension .pa3. e.g.,
+<code>import.project("bird_project/bird_project.pa3")</code></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns an object of class <code>aic.table</code>, the same as the result of
+the <code><a href="createAicTable.html">createAicTable</a></code> function. The only difference being that the
+<code>model</code> component of the stored <code><a href="occMod.html">occMod</a></code> objects = NULL. i.e.,
+the model structure is not imported and left undefined.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="createAicTable.html">createAicTable</a></code>,<code><a href="occMod.html">occMod</a></code>,
+<code><a href="predict.occMod.html">predict.occMod</a></code>,<code><a href="modAvg.html">modAvg</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

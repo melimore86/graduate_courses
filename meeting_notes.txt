@@ -1,0 +1,30 @@
+joiner between station name and station coordinates, with the start and end
+
+determining the centroid with the coordinates of the transect replicate, needs to talk with joe about the primary key, and the foreign key, needs to match the ESRI products so that it works, however ESRI doesn't accept every primary key frames
+
+
+will combine with the tiles, that the transect and the wq data
+
+naming conventions for the wild bars, create new names for it, but with the same kind of naming convetions, LC23 N for example, have the spatial defined 
+
+Maybe having a tripID, where it can gave a code for accertain trip
+
+make the cooperator data private
+
+ESRI summer institute, to look it up and apply, workshops 
+
+
+Check on the start time and end time, and see if there the best way to have the time on there, create some code with lubridate and with zoo
+
+
+
+Proposal-
+
+Earnest Hemingway
+
+Find a couple of papers that I want to model my paper
+
+Clearer, and more precise paragraphs 
+
+
+

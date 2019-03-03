@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fit multi-state dynamic (multi-season) occupancy model using...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occMod_DO_ms1 {RPresence}"><tr><td>occMod_DO_ms1 {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fit multi-state dynamic (multi-season) occupancy model using the 1st parameterisation (<i>&psi;/&phi;</i>).</h2>
+
+<h3>Description</h3>
+
+<p>This is not intended for direct use, but instead the <code><a href="occMod.html">occMod</a></code> function should be used with <code>type="do.ms.1"</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+occMod_DO_ms1(psi = call(), psi.cov = data$unitcov, phi = call(),
+  phi.cov = data$unitcov, p = call(), p.cov = data$survcov,
+  modname = NULL, paoname = NULL, outfile, model = 6000, fixed = NULL,
+  initvals = NULL, data, VCoutopt = " ", noDerived = F, randinit = 0)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for occupancy probability.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.cov</code></td>
+<td>
+<p>a data frame containing the unit-specific covariates to use for the occupancy component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>phi</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for occupancy transition probabilities,.</p>
+</td></tr>
+<tr valign="top"><td><code>phi.cov</code></td>
+<td>
+<p>a data frame containing the unit-specific covariates to use for the occupancy component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>the right-hand side of the formula for the model to fit for detection probability.</p>
+</td></tr>
+<tr valign="top"><td><code>p.cov</code></td>
+<td>
+<p>a data frame containing the survey-specific covariates to use for the detection component of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>(optional) a string containing the model name</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>(optional) a string containing the filename for the temporary PRESENCE data file.</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>the PRESENCE model code. DO NOT CHANGE.</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>a 2-column matrix containing indices and values for real parameters to be fixed at.</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>initial values for the beta parameters at which PRESENCE begins the optimisation. Default = 0.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>the <code>pao</code> data object containing the detection data and other information.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>returns a list of class <code>"occMod"</code> and <code>"do.1"</code>.
+</p>
+<p><code>occMod$beta</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of occurrence in the first year.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of occurrence in the first year.</p>
+</td></tr>
+<tr valign="top"><td><code>phi</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of state transition between years.</p>
+</td></tr>
+<tr valign="top"><td><code>phi.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of transition between years.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>p.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>VC</code></td>
+<td>
+<p>the full variance-covariance matrix for all logistic regression coefficients.</p>
+</td></tr>
+</table>
+<p><code>occMod$real</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated probabilities of occurrence for each sampling unit and state, along with standard errors and limits
+of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>phi</code></td>
+<td>
+<p>estimated probabilities of transition between occupancy states for each sampling unit and state, along with standard errors and limits
+of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated probabilities of detection for each survey, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+</table>
+
+
+<h3>Note</h3>
+
+<p>NOTE THAT THIS FUNCTION HAS NOT BEEN EXTENSIVELY TESTED SO EXACT IMPLEMENTATION MAY CHANGE.
+</p>
+<p>psi built-in covariates:
+</p>
+
+<ul>
+<li><p>STATE   - for model where psi (initial occupancy) depends on occupancy state.
+</p>
+</li></ul>
+
+<p>phi built-in covariates:
+</p>
+
+<ul>
+<li><p>FROM - for model where psi depends on state species is transitioning from.
+</p>
+</li>
+<li><p>TO   - for model where psi depends on state species is transitioning to.
+</p>
+</li>
+<li><p>FROM_TO - for model where psi depends on &quot;from&quot; state and &quot;to&quot; state (equalivent to &quot;FROM*TO&quot;).
+</p>
+</li>
+<li><p>SEASON - for model where psi changes from season to season.
+</p>
+</li></ul>
+
+<p>P built-in covariates:
+</p>
+
+<ul>
+<li><p>OSTATE - detection depends on observed state of species.
+</p>
+</li>
+<li><p>OTSTATE - detection depends on both observed and true state of species.
+</p>
+</li>
+<li><p>SURVEY  - detection varies by survey.
+</p>
+</li>
+<li><p>SEASON  - detection varies by season (constant within season).
+</p>
+</li></ul>
+
+<p>Note: P21 (prob detect as state=2, when true state=1) must be fixed to 0, or model will not converge
+Also: setting outfile=&quot;modname&quot; causes RPresence to save the output file using the model name
+(with &quot;.out&quot; extension). Otherwise, you can name it something else.
+Or, set outfile=NULL to not save the output file.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jim Hines
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>, <code><a href="occMod_DO_ms2.html">occMod_DO_ms2</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

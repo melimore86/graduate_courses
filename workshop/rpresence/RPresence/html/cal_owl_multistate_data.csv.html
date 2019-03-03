@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Occupancy detection data for California Spotted Owls...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cal_owl_multistate_data.csv {RPresence}"><tr><td>cal_owl_multistate_data.csv {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Occupancy detection data for California Spotted Owls (single-season, multi-state analysis)</h2>
+
+<h3>Description</h3>
+
+<p>One of the motivating examples for Nichols et al. (2007a) was estimation of the
+reproductive rate of California spotted owls (Strix occidentalis) in the central
+Sierra Nevada (California, USA), while allowing for state classification uncertainty
+(e.g., whether territories are unoccupied, occupied without breeding, or
+occupied with breeding) and variable sampling protocols.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read.csv(system.file("extdata/cal_owl_multistate_data.csv",package="RPresence"),as.is=T)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>csv file with 54 rows and 5 columns</p>
+
+
+<h3>Details</h3>
+
+<p>Survey data collected during April to mid-August 2004 from 54 potential
+territories in the Eldorado study area were analyzed using a multi-state occupancy
+modeling framework.
+</p>
+
+<ul>
+<li><p> 54 sites
+</p>
+</li>
+<li><p> 5 surveys
+</p>
+</li>
+<li><p> 1 season
+</p>
+</li>
+<li><p> 3 occupancy states (&quot;0&quot;=unoccupied, &quot;1&quot;=occupied, &quot;2&quot;=occupied with breeding)
+</p>
+</li>
+<li><p> contains missing data (denoted by &quot;.&quot;)
+</p>
+</li></ul>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+#  Single-season multi-state example (2 occupancy states, psi-R parameteization) (pg 231 in book)
+
+#    read detection history data from csv file...
+csv&lt;-read.csv(system.file("extdata/cal_owl_multistate_data.csv",package="RPresence"),as.is=T)
+csv[csv=="."]=NA
+
+sitenames=csv[,1]  #  sitenames in 1st column
+dethist=csv[,-1];  #  get rid of 1st column (site name)
+nsites=nrow(dethist) #  set number of sites,surveys from det. history data
+nsrvys=ncol(dethist)
+
+#  create survey covariate to categorize surveys 1-2 as 1 period
+#                                    and surveys 3-5 as another period
+#    Since it's a survey covariate, it will be a NxT matrix (N=nsites, T=nsurveys)
+#    The covariate matrix would be:
+#         1 2 3 4 5
+#  site1 [1 1 2 2 2]
+#  site2 [1 1 2 2 2]
+#   :    [: : : : :]
+#  siteN [1 1 2 2 2]
+#    Filling in by cols means we repeat "1" N times, then "1" N times,
+#                  then "2" N times, then "2" N times, then "2" N times.
+#    We save it as a data frame (without the matrix dimensions).
+cov2=data.frame(PER=as.factor(c(rep(1,2*nsites),rep(2,3*nsites))))
+
+#          create input "pao" object, for use with occMod function
+data=createPao(dethist,survcov=cov2,title="Cal Owl example")
+
+xmods=list(); i=1       #  run each model and save in list variable, "xmods"
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~1,     delta~1),data=data,type="do.ms.2");i=i+1
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~SURVEY,delta~1),data=data,type="do.ms.2");i=i+1
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~STATE, delta~1),data=data,type="do.ms.2");i=i+1
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~1,     delta~PER),data=data,type="do.ms.2");i=i+1
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~SURVEY,delta~PER),data=data,type="do.ms.2");i=i+1
+xmods[[i]]=occMod(model=list(psi~1,r~1,p~STATE, delta~PER),data=data,type="do.ms.2");i=i+1
+
+#     create AIC table of model results and print
+results2&lt;-createAicTable(xmods); cat('Cal Owl example\n'); print(results2$table)
+
+#     print table 5.1 from book...
+cat('CA spotted owl reproduction Table 5.1 (pg 234 in book)\n')
+estmts=xmods[[6]]$real
+estimate_table=rbind(estmts$psi[1,],estmts$r[1,],estmts$p1[1,],estmts$p2[1,],estmts$delta[1,],estmts$delta[109,])
+rownames(estimate_table)=c('psi','R','p1','p2','delta1','delta2'); print(estimate_table)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

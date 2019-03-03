@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Blue-Ridge salamander data (single-season example with...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Blue_Ridge_pg135.csv {RPresence}"><tr><td>Blue_Ridge_pg135.csv {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Blue-Ridge salamander data (single-season example with covariate)</h2>
+
+<h3>Description</h3>
+
+<p>The Blue-Ridge two-lined salamander (Eurycea wilderae) is one of over 30
+species of salamanders that occur within the Great Smoky Mountains National
+Park (Dodd, 2003).  These data are from 2001 for one species
+(Blue-Ridge two-lined salamander.  See MacKenzie et. al (2017) for more info.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+salmdr&lt;-read.csv(system.file("extdata/Blue_Ridge_pg135.csv",package="RPresence"),header=FALSE)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>csv file with 39 rows and 5 columns</p>
+
+
+<h3>Details</h3>
+
+
+<ul>
+<li><p> 39 sites
+</p>
+</li>
+<li><p> 5 surveys
+</p>
+</li>
+<li><p> 1 season
+</p>
+</li></ul>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+#   Exanple 1 - Single-season model with Salamander data (pg 135 in new occ. book)
+# load a csv file with detection-histories
+filename&lt;-system.file("extdata/Blue_Ridge_pg135.csv",package="RPresence")
+salmdr.csv&lt;-read.csv(system.file("extdata/Blue_Ridge_pg135.csv",package="RPresence"),header=FALSE)
+
+# Create PRESENCE input file object from csv
+salmdr.data&lt;-createPao(salmdr.csv)
+
+## fit some models
+salmod1&lt;-occMod(model=list(psi~1,p~SURVEY),data=salmdr.data,type="so")
+salmod2&lt;-occMod(model=list(psi~1,p~1)     ,data=salmdr.data,type="so")
+
+## create AIC table
+models&lt;-list(salmod1,salmod2)
+results&lt;-createAicTable(models)
+cat('Blue-Ridge example (table 4.2 in book)\n'); print(summary(results))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

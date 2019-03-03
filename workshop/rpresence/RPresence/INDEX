@@ -1,0 +1,78 @@
+Blue_Ridge_pg135.csv    Blue-Ridge salamander data (single-season
+                        example with covariate)
+HouseFinch.csv          HouseFinch data csv file (multi-season example
+                        with covariates)
+RPresence-package       R Interface for Program PRESENCE
+cal_owl_multistate_data.csv
+                        Occupancy detection data for California Spotted
+                        Owls (single-season, multi-state analysis)
+coef.occMod             Extract regression coefficients from occupancy
+                        model, i.e., real parameter estimates
+createAicTable          Create AIC table
+createPao               Create a pao data object.
+fitted.occMod           Extract fitted values from occupancy model,
+                        i.e., real parameter estimates
+genpresEV               generate expected value detection histories
+genpresEVms             generate expected value detection histories for
+                        multi-state models
+get_not01_dm            get site/survey covarite names which are not
+                        all 0 or 1 in the design matrix so the 0/1
+                        covariate names (eg., Intercept) can be omitted
+                        from the temp.pao file.
+importProject           Import a PRESENCE project into R.
+is.pao                  check if object is pao object
+modAvg                  Calculate model averaged estimates
+modCombos               Create a list of formulae for all possible
+                        first-order combinations for a set of
+                        variables.
+occMod                  Fit an occupancy model using Program PRESENCE
+occMod_2SP              Fit two species, static occupancy (single
+                        season), or dynamic occupancy (multi-season)
+                        model
+occMod_2SPfp            Fit two species, static occupancy (single
+                        season) model with false positive detections
+occMod_DO               Fit dynamic (multi-season) occupancy model
+                        using the first parameterisation in PRESENCE.
+occMod_DO4              Fit dynamic (multi-season) occupancy model
+                        using the fourth parameterisation (random
+                        changes in occupancy, epsilon=1-gamma) in
+                        PRESENCE.
+occMod_DO_fp            Fit static occupancy/single season model
+occMod_DO_ms1           Fit multi-state dynamic (multi-season)
+                        occupancy model using the 1st parameterisation
+                        (psi/phi).
+occMod_DO_ms2           Fit multi-state dynamic occupancy
+                        (multi-season) occupancy model using the second
+                        (conditional binomial) parameterisation in
+                        PRESENCE.
+occMod_SO               Fit static occupancy/single season model
+occMod_SO_2SP_cd        Fit two species, static occupancy (single
+                        season) model with correlated detectoins
+occMod_SO_cd            Fit static occupancy, correlated detections
+                        model
+occMod_SO_fp            Fit static occupancy/single season model
+occMod_SO_mm            Fit multi-method (or multi-scale) static
+                        occupancy/single season model
+predict.occMod          Predict real parameter values.
+print_one_site_estimates
+                        Print real param estimates for i-th site only
+                        'print_one_site_estimates' Prints real param
+                        estimates for ith site only
+psi_cond                get conditional occupancy estimates from
+                        single-season ("so") model
+readPao                 Read a pao data object.
+runPresence             call PRESENCE to produce model estimates
+                        (replaces "write_dm_and_run")
+simplify_dm             simplify design matrix by replacing all
+                        individual covariates which are all one or zero
+                        with '1' or '0' in the design matrix.  This
+                        makes the design matrix much easier to read and
+                        faster for the model. 'simplify_dm' Replaces
+                        ind. covariates which are all 0 or 1, with 0 or
+                        1.
+summary.aicTable        Summary of 'aic.table' object
+summary.occMod          Summary of occupancy model
+summary.pao             Summary of occupancy data object
+summedWgt               Calculate summed model weights for a set of
+                        variables for a specific parameter.
+writePao                Write a pao data object to disk file.

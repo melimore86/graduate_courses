@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fit two species, static occupancy (single season), or dynamic...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occMod_2SP {RPresence}"><tr><td>occMod_2SP {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fit two species, static occupancy (single season), or dynamic occupancy (multi-season) model</h2>
+
+<h3>Description</h3>
+
+<p>This is not intended for direct use, but instead the <code><a href="occMod.html">occMod</a></code> function should be used with <code>type="so.2sp.1"</code> or <code>type="so.2sp.2"</code> depending on the parameterisation required. NOTE THAT THERE MAY BE SOME CHANGES TO HOW THIS MODEL IS IMPLEMENTED IN THE NEAR FUTURE.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+occMod_2SP(psi = call(), psi.cov = data$unitcov, p = call(),
+  p.cov = cbind(data$unitcov, data$survcov), gamma = call(),
+  gamma.cov = cbind(data$unitcov, data$survcov), epsilon = call(),
+  epsilon.cov = cbind(data$unitcov, data$survcov), param = "nu",
+  sp.contr = TRUE, modname = NULL, paoname = NULL, outfile,
+  model = 3000, fixed = NULL, initvals = NULL, data, VCoutopt = " ",
+  noDerived = F, randinit = 0)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for occupancy probability.
+The terms <code>SP</code> and <code>INT</code> can be used to define a species effect on occupancy and an
+occurrence-level interaction between species accordingly, without them being defined in <code>psi.cov</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.cov</code></td>
+<td>
+<p>A data frame containing the unit-specific covariates to use for the occupancy component
+of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for detection probability. The terms
+<code>SP</code>, <code>INT_o</code> and <code>INT_d</code> can be used to define a species effect on detection, a
+detection-level interaction where the occurrence of one species changes the detection probability of
+the other species and a second detection-level interaction where the detection of one species changes
+the detection probability of the other species in the same survey. These terms do not have to be
+defined as variables in <code>p.cov</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>p.cov</code></td>
+<td>
+<p>A data frame containing the survey-specific covariates to use for the detection component
+of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for colonization probability. The
+following terms can be used to define effects on colonization:
+</p>
+
+<ul>
+<li><p><code>SP</code> species effect on colonization (gammaB != gammaA)
+</p>
+</li>
+<li><p><code>SEASON</code> seasonal effect on colonization (gammaXX(t))
+</p>
+</li>
+<li><p><code>INT_Ba</code> interaction of effect on colonization for species B when species A was, or was
+not present (gammaBA != gammaBa)
+</p>
+</li>
+<li><p><code>INT_B_a</code> interaction of effect on colonization for species B when species A was present
+in the previous season and was, or was not present in succeeding season (gammaB?A != gammaB?a)
+</p>
+</li>
+<li><p><code>INT_Baa</code> interaction of effect on colonization for species B when species A was not present
+in the previous season and was, or was not present in succeeding season (gammaBaA != gammaBaa)
+</p>
+</li>
+<li><p><code>INT_Ab</code> interaction of effect on colonization for species A when species B was, or was
+not present in the previous season (gammaAB != gammaAb)
+</p>
+</li></ul>
+
+<p>These terms do not have to be
+defined as variables in <code>p.cov</code>. For single-season model, set gamma to NULL.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma.cov</code></td>
+<td>
+<p>A data frame containing the site-season-specific covariates to use for the colonization
+component of the model.  This should be a NxK data frame, where N=number of sites, and
+K=number of sites*number of seasons.</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for extinction probability.
+The terms <code>SP</code>, <code>INT_Ba</code>, <code>INT_B_a</code>, <code>INT_Baa</code>, <code>INT_Ab</code>, <code>SEASON</code>
+can be used to define effects on extinction, similar to those defined for colonization.
+These terms do not have to be defined as variables in <code>p.cov</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon.cov</code></td>
+<td>
+<p>A data frame containing the site-specific covariates to use for the extinction
+component of the model, similar to gaam.cov.</p>
+</td></tr>
+<tr valign="top"><td><code>param</code></td>
+<td>
+<p>The parameterisation to be used, either &quot;<code>psiBA</code>&quot; or &quot;<code>nu</code>&quot;, which relate to
+<code>type="so.2sp.1"</code> and <code>type="so.2sp.2"</code> in the function <code><a href="occMod.html">occMod</a></code> respectively.</p>
+</td></tr>
+<tr valign="top"><td><code>sp.contr</code></td>
+<td>
+<p><code>TRUE</code> (default) or <code>FALSE</code>. Specifies the type of contrast used for the
+<code>SP</code> term. It it used as the <code>contrasts</code> input in the function <code><a href="../../stats/html/contrast.html">contr.treatment</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>(optional) a string containing the model name</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>(optional) a string containing the filename for the temporary PRESENCE data file.</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>The PRESENCE model code. DO NOT CHANGE.</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>A single-column matrix containing values for real parameters to be fixed at.
+<code>rownnames(fixed)</code> should contain the index of the real parameters to be fixed.</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>Initial values for the beta parameters at which PRESENCE begins the optimisation.
+The default values in PRESENCE is 0.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>The <code>pao</code> data object containing the detection data and other information.
+NOTE THAT THERE MAY BE SOME CHANGES TO HOW THIS MODEL IS IMPLEMENTED IN THE NEAR FUTURE.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Note:  This function assumes data are in &quot;compressed&quot; format (ie.,<br />
+0=neither species detected,<br />
+1=only species A detected,<br />
+2=only species B detected,<br />
+3=both species detected)<br />
+</p>
+<p>&quot;Stacked&quot; format can easily be converted to &quot;compressed&quot; format by:<br />
+<code>nsites=nrow(det.data)/2<br />
+       new.det.data=det.data[1:nsites,]+2*det.data[nsites+1:nsites,]</code>
+</p>
+
+
+<h3>Value</h3>
+
+<p>returns a list of class <code>"occMod"</code> and <code>"do.1"</code>.
+</p>
+<p><code>occMod$beta</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of
+occurrence in the first year.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability
+of occurrence in the first year.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>p.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of colonization.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma.VC</code></td>
+<td>
+<p>var-cov matrix for logistic regression coefficients for probability of colonization.</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of extinction.</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon.VC</code></td>
+<td>
+<p>var-cov matrix for logistic regression coefficients for probability of extinction.</p>
+</td></tr>
+<tr valign="top"><td><code>VC</code></td>
+<td>
+<p>the full variance-covariance matrix for all logistic regression coefficients.</p>
+</td></tr>
+</table>
+<p><code>occMod$real</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated probabilities of occurrence for each sampling unit, along with standard errors
+and limits of 95% confidence interval. Estimates are provided for the first season (calculated
+directly from the estimated <code>beta</code> parameters). Estimates for later seasons are provided as
+derived parameters. The season for which an estimate applies to can be identified from the final
+number of the row names (<code>rownames(psi)</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated probabilities of detection for each survey, along with standard errors and limits
+of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma</code></td>
+<td>
+<p>estimated probabilities of colonization for each sampling unit and season, along with standard errors and limits
+of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon</code></td>
+<td>
+<p>estimated probabilities of extinction for each sampling unit and season, along with standard errors and limits
+of 95% confidence interval.</p>
+</td></tr>
+</table>
+<p><code>occMod$derived</code> contains the object:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated probabilities of occurrence for each sampling unit for second season onwards,
+along with standard errors and limits of 95% confidence interval. The season for which an estimate
+applies to can be identified from the final number of the row names (<code>rownames(psi)</code>).</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# load a csv data file
+filename&lt;-system.file("extdata/twosp_exmpl.csv",package="RPresence")
+csv&lt;-read.csv(filename,as.is=T,header=F)
+##
+nsites=nrow(dethist); nsrvys=ncol(dethist)         #  set number of sites,surveys from det. history data
+dethist=matrix(as.integer(unlist(dethist)),nrow=nsites) # replace missing values (-) with NA
+cov1=cov2=NULL
+##          create input "pao" object, for use with occMod function
+data=createPao(dethist,unitcov=cov1,survcov=cov2,title="twosp example")
+
+## fit some models
+##    occupancy: species-specific, no interaction, parameters: psiA, psiBA=psiBa
+##    detection: species-specific, p=r
+mod1&lt;-occMod(model=list(psi~SP,p~SP),data=data,type="so.2sp.1",param="PsiBA")
+
+##    occupancy: species-specific, interaction, parameters: psiA, psiBA, psiBa
+##    detection: species-specific, p=r
+mod2&lt;-occMod(model=list(psi~SP+INT,p~SP),data=data,type="so.2sp.1",param="PsiBA")
+
+##    occupancy: species-specific, interaction,
+##    detection: species=specific, interaction p,r (INT_o) and rBA,rBA (INT_d)
+##     Note: this is default 2 sp. model (psiA,psiBA,psiBa,pA,pB,rA,rBA,rBa)
+mod3&lt;-occMod(model=list(psi~SP+INT,p~SP+INT_o+INT_d+SP:INT_o),data=data,type="so.2sp.1",param="PsiBA")
+#
+## Not run: 
+m1&lt;-occMod(model=list(psi~SP,p~SP,data=data,type="so.2sp.1",param="PsiBA")
+
+## fit some multi-season, 2-species models (using different data)
+mod0&lt;-occMod(model=list(psi=psi~SP+INT,                                   #  PsiA,psiB,psiBa
+                         gamma =gamma~SP+INT_Ab+INT_Ba+INT_B_a+INT_Baa,    #  gamAB,gamAb,gamBAA,gamBAa,gamBaA,gamBaa
+                         epsilon=epsilon~SP+INT_Ab+INT_Ba+INT_B_a+INT_Baa, #  epsAB,epsAb,epsBAA,epsBAa,epsBaA,epsBaa
+                         p      =p~SP+INT_o+INT_d+SP:INT_o),               #  pA,pB,rA,rBA,rBa
+              data=data,type="do.2sp.1")
+mod1&lt;-occMod(model=list(psi=psi~SP+INT,                                   #  PsiA,psiB,psiBa
+                         gamma =gamma~SP+INT_Ab+INT_Ba,                    #  gamAB,gamAb,gamBA.,gamBa.
+                         epsilon=epsilon~SP+INT_Ab+INT_Ba,                 #  epsAB,epsAb,epsBA.,epsBa.
+                         p      =p~SP+INT_o+INT_d+SP:INT_o),               #  pA,pB,rA,rBA,rBa
+              data=data,type="do.2sp.1")
+mod2&lt;-occMod(model=list(psi=psi~SP+INT,                                   #  PsiA,psiB,psiBa
+                         gamma =gamma~SP,                                  #  gamA.,gamB..
+                         epsilon=epsilon~SP,                               #  epsA.,epsB..
+                         p      =p~SP+INT_o+INT_d+SP:INT_o),               #  pA,pB,rA,rBA,rBa
+              data=data,type="do.2sp.1")
+
+tbl=create_aic_table(list(mod0,mod1,mod2))
+print(tbl$table)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

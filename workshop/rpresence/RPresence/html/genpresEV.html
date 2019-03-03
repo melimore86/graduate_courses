@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: generate expected value detection histories</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for genpresEV {RPresence}"><tr><td>genpresEV {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>generate expected value detection histories</h2>
+
+<h3>Description</h3>
+
+<p><code>genpresEV</code> generates expected value detection history frequencies for
+single or multi-season models (false-positives optional)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+genpresEV(N = 100, K = 4, psi = 0.75, p = 0.4, fp = 0, b = 0,
+  eps = 0, gam = 0, sps = 4)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>N</code></td>
+<td>
+<p>number of sites</p>
+</td></tr>
+<tr valign="top"><td><code>K</code></td>
+<td>
+<p>number of surveys</p>
+</td></tr>
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>probability of occupancy</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>probability of detection (not false positive)</p>
+</td></tr>
+<tr valign="top"><td><code>fp</code></td>
+<td>
+<p>probability of false detection</p>
+</td></tr>
+<tr valign="top"><td><code>b</code></td>
+<td>
+<p>probability of &quot;sure&quot; detection</p>
+</td></tr>
+<tr valign="top"><td><code>eps</code></td>
+<td>
+<p>probability of local extinction between seasons</p>
+</td></tr>
+<tr valign="top"><td><code>gam</code></td>
+<td>
+<p>probability of local colonization between seasons</p>
+</td></tr>
+<tr valign="top"><td><code>sps</code></td>
+<td>
+<p>number of surveys per season</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>list(hst=det. history matrix, frq=vector of frequencies)
+</p>
+
+
+<h3>Note</h3>
+
+<p>This function generates at least 2^K detection-histories, so if K&gt;8, it may take a
+very long time to run.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+   # generate expected value data for standard single-season model (no false positives)
+hstfrq=genpresEV(N=1000, K=4, psi=.8, p=.3)  # generate det. hists and freqs
+EVpao=createPao(hstfrq$hst,frq=hstfrq$frq)                  #  create pao file
+
+   # generate expected value data for single-season model with false positive detections
+hstfrq=genpresEV(N=1000, K=4, psi=.8, p=.3, fp=0.1, b=0.5)  # generate det. hists and freqs
+EVpao=createPao(hstfrq$hst,frq=hstfrq$frq)                  #  create pao file
+
+   # generate expected value data for multi-season model (no false positive detections)
+hstfrq=genpresEV(N=1000, K=4, psi=.8, p=.3, eps=.2, gam=.1, sps=2)  # generate det. hists and freqs
+EVpao=createPao(hstfrq$hst,frq=hstfrq$frq,nsurveyseason=2)   #  create pao file
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,13 @@
+transect
+
+
+
+
+rock
+double entry will help reduce issues in the future
+make a code to check when all the dates were samples
+histogram
+plots
+make a range of the columns 
+make the decision to be deleted, the observation 
+check the lab 3 that was sent to me, before the production file 

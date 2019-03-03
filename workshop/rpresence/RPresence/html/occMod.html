@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fit an occupancy model using Program PRESENCE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occMod {RPresence}"><tr><td>occMod {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fit an occupancy model using Program PRESENCE</h2>
+
+<h3>Description</h3>
+
+<p><code>occMod</code> returns a list variable containing detection-history and covariate data.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+occMod(model, cov.list = NULL, data, type = NULL, conf = 0.95,
+  modname = NULL, paoname = NULL, outfile = NULL, fixed = NULL,
+  initvals = NULL, modfitboot = NULL, VCoutopt = "realbetavc",
+  noDerived = F, randinit = 0, maxfn = "32000", ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>list of formula for each paramter (eg., psi, p, gam, eps...)</p>
+</td></tr>
+<tr valign="top"><td><code>cov.list</code></td>
+<td>
+<p>list of covariates used in the model</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>pao data object</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>a string indicating the type of occupancy model to fit. Currently implemented <code>type</code> options are:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+  <code>type</code> </td><td style="text-align: left;"> Descriptionxxx </td><td style="text-align: left;"> Function (see for details) </td><td style="text-align: left;"> Reserved covariate names </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"so"</code> </td><td style="text-align: left;"> Static occupancy, single season </td><td style="text-align: left;"> <code><a href="occMod_SO.html">occMod_SO</a></code></td><td style="text-align: left;"> <code>SURVEY</code> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"so.fp"</code> </td><td style="text-align: left;"> Static occupancy, single season, false-positive detections</td><td style="text-align: left;"> <code><a href="occMod_SO_fp.html">occMod_SO_fp</a></code></td><td style="text-align: left;"> <code>SURVEY</code> </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"so.mm"</code> </td><td style="text-align: left;"> Static occupancy, single season, multi method (or multi-scale) </td><td style="text-align: left;"> <code><a href="occMod_SO_mm.html">occMod_SO_mm</a></code></td><td style="text-align: left;"> <code>SURVEY</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"so.cd"</code> </td><td style="text-align: left;"> Static occupancy, single season, correlated detections </td><td style="text-align: left;"> <code><a href="occMod_SO_cd.html">occMod_SO_cd</a></code></td><td style="text-align: left;"> <code>SURVEY</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"2sp"</code></td><td style="text-align: left;"> Static or Dynamic occupancy, 2 species, "psiBA" or "nu" param </td><td style="text-align: left;"> <code><a href="occMod_2SP.html">occMod_2SP</a></code></td><td style="text-align: left;"> <code>SURVEY,SP,INT,INT_o,INT_d,SEASON</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"so.2sp.fp"</code></td><td style="text-align: left;"> Static occupancy, single season, 2 species, false positive detections </td><td style="text-align: left;"> <code><a href="occMod_SO_2SP_cd.html">occMod_SO_2SP_cd</a></code></td><td style="text-align: left;"> <code>SURVEY,SP,INT,INT_o,INT_d</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.1"</code> </td><td style="text-align: left;"> Dynamic occupancy, multi season, 1st param </td><td style="text-align: left;"> <code><a href="occMod_DO.html">occMod_DO</a></code></td><td style="text-align: left;"> <code>SURVEY,SEASON</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.fp"</code> </td><td style="text-align: left;"> Dynamic occupancy, multi season, with false-positive detections </td><td style="text-align: left;"> <code><a href="occMod_DO_fp.html">occMod_DO_fp</a></code></td><td style="text-align: left;"> <code>SURVEY,SEASON</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.4"</code> </td><td style="text-align: left;"> Dynamic occupancy, multi season, 4th param </td><td style="text-align: left;"> <code><a href="occMod_DO4.html">occMod_DO4</a></code></td><td style="text-align: left;"> <code>SURVEY,SEASON</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.ms.1"</code></td><td style="text-align: left;"> Dynamic occupancy, multi season, multi state, 1st param</td><td style="text-align: left;"> <code><a href="occMod_DO_ms1.html">occMod_DO_ms1</a></code></td><td style="text-align: left;"> <code>SURVEY,SEASON,DYN,PREV_STATE,STATE</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.ms.2"</code></td><td style="text-align: left;"> Dynamic occupancy, multi season, multi state, 2nd param</td><td style="text-align: left;"> <code><a href="occMod_DO_ms2.html">occMod_DO_ms2</a></code></td><td style="text-align: left;"> <code>SURVEY,SEASON,DYN,PREV_STATE,STATE</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  <code>"do.2sp.1"</code></td><td style="text-align: left;"> Dynamic occupancy, multi season, 2 species, psiBA param </td><td style="text-align: left;"> <code><a href="occMod_2SP.html">occMod_2SP</a></code></td><td style="text-align: left;"> <code>SURVEY,SP,INT,INT_o,INT_d</code></td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+</td></tr>
+<tr valign="top"><td><code>conf</code></td>
+<td>
+<p>level for confidence interval (may be vector valued).</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>(optional) a string with the user supplied name for a model.
+If <code>NULL</code>, <code>modname</code> is created from the formulae supplied in <code>model</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>(optional) a string with the user supplied filename for PRESENCE data and
+output files. If <code>NULL</code>, a generated name is used.</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>a data.frame with variables <code>param</code> and <code>value</code>. <code>param</code>
+should be a vector of string values containing the names of the real parameters (eg., &quot;p(2)&quot;) to fix, and
+<code>value</code> be a numeic vector of the values the real parameter should be fixed at.
+Ordering depends on model <code>type</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>a vector providing initial values for regression coefficients for
+the optimization procedure used by PRESENCE. Ordering depends on model <code>type</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>modfitboot</code></td>
+<td>
+<p>number of bootstraps for assessing model fit. Only works for <code>type = "so"</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>VCoutopt</code></td>
+<td>
+<p>option for PRESENCE computation/output of beta/real var-cov matrices</p>
+</td></tr>
+<tr valign="top"><td><code>randinit</code></td>
+<td>
+<p>number of random initial starting value vectors to try (defalut=0)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments to occMod.XX function.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>choices for <code>VCoutopt</code> are:
+</p>
+
+<ul>
+<li><p>&quot;nose&quot;only compute likelihood and beta estimates, no beta var-cov matrix or beta SE's (useful for faster model selection of big models or simulations)
+</p>
+</li>
+<li><p>&quot;betavc&quot;compute but don't print beta var-cov matrix so we get beta SE's, don't compute real params
+</p>
+</li>
+<li><p>&quot;noreal&quot;compute and print beta beta var-cov matrix, don't compute real params (I think this is what you want for RPresence)
+</p>
+</li>
+<li><p>&quot;novcs&quot;compute real params and real var-cov matrix, don't print either var-cov matrix.
+</p>
+</li>
+<li><p>&quot;realbetavc&quot;(default) compute real params and real var-cov matrix, print only beta var-cov matrix.
+</p>
+</li>
+<li><p>&quot;bothvc&quot;print both var-cov matrices.
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>Returns a list of class &quot;occMod&quot; and class <code>type</code>.
+The <code>occMod</code> object has the following objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>the name of the model</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>a named list containing the right-hand formula for each real parameter type.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>a copy of the temporary <code>pao</code> object that is created from the <code>model</code> argument then used to create the temporary PRESENCE data file for fitting the model.</p>
+</td></tr>
+<tr valign="top"><td><code>outfile</code></td>
+<td>
+<p>name of PRESENCE output file.</p>
+</td></tr>
+<tr valign="top"><td><code>neg2loglike</code></td>
+<td>
+<p>-2*log(likelihood) value for the model evaluated at the maximum likelihood estimates.</p>
+</td></tr>
+<tr valign="top"><td><code>npar</code></td>
+<td>
+<p>number of parameters in the model, calculated as the number of regression coefficients.</p>
+</td></tr>
+<tr valign="top"><td><code>aic</code></td>
+<td>
+<p>value of Akaike's Information Criterion.</p>
+</td></tr>
+<tr valign="top"><td><code>beta</code></td>
+<td>
+<p>list of estimated regression coefficents (sometimes called beta parameters), standard errors and variance-covariance matrix for each parameter type. Exact content depends on the <code>type</code> of model being fit to the data. Values will be on either the logit or log scale depending on whether the parameter type is a probability or not, respectively.</p>
+</td></tr>
+<tr valign="top"><td><code>real</code></td>
+<td>
+<p>list of real parameter estimates on their natural scale (i.e., 0-1 for probabilities). A data frame for each parameter type the contains the estimate, standard error and limits of the requested confidence intervals. Exact content depends on the <code>type</code> of model being fit to the data.</p>
+</td></tr>
+<tr valign="top"><td><code>derived</code></td>
+<td>
+<p>list of parameter estimates that are derived from real parameters and not directly estimated. A data frame for each parameter type the contains the estimate, standard error and limits of the requested confidence intervals. Exact content depends on the <code>type</code> of model being fit to the data.</p>
+</td></tr>
+<tr valign="top"><td><code>modfit</code></td>
+<td>
+<p>list of statistics from parametric bootstrap-based model fit.</p>
+</td></tr>
+<tr valign="top"><td><code>warnings</code></td>
+<td>
+<p>a list containing any warnings from the PRESENCE output file; <code>conv</code>=number of significant digits convergence was achieved to (=<code>NULL</code> if &gt;7); and <code>VC</code>=1 if there is a problem with the variance-covariance matrix (likely non-invertiable observed Hessian matrix), =<code>NULL</code> otherwise. If <code>conv</code>&lt;3 then may want to attempt alternative initial values or rescaling covariates to see if different results are obtained. If <code>VC</code>=1 then all standard errors and confidence intervals should be ignored.</p>
+</td></tr>
+<tr valign="top"><td><code>version</code></td>
+<td>
+<p>a list containing the version numbers for PRESENCE and RPresence used when fitting the model</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod_SO.html">occMod_SO</a></code>,<code><a href="occMod_SO_mm.html">occMod_SO_mm</a></code>,<code><a href="occMod_2SP.html">occMod_2SP</a></code>,
+<code><a href="occMod_DO.html">occMod_DO</a></code>,<code><a href="occMod_DO4.html">occMod_DO4</a></code>,<code><a href="occMod_DO_ms2.html">occMod_DO_ms2</a></code>,<code><a href="occMod_2SPfp.html">occMod_2SPfp</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# load a PRESENCE data file
+filename&lt;-system.file("extdata/weta.pao",package="RPresence")
+weta.data&lt;-readPao(filename)
+
+## convert indicator variables to categorical covariates
+weta.data$unitcov$Habitat[weta.data$unitcov$Browsed==1] &lt;- "browsed"
+weta.data$unitcov$Habitat[weta.data$unitcov$Unbrowsed==1] &lt;- "unbrowsed"
+weta.data$survcov$Obs&lt;-as.factor(
+     1*weta.data$survcov$Obs1+
+     2*weta.data$survcov$Obs2+
+     3*weta.data$survcov$Obs3)
+
+## fit some models
+mod1&lt;-occMod(model=list(psi~Habitat,p~SURVEY+Obs),data=weta.data,type="so")
+mod2&lt;-occMod(model=list(psi~Habitat,p~Obs),data=weta.data,type="so")
+mod3&lt;-occMod(model=list(psi~Habitat,p~SURVEY),data=weta.data,type="so")
+mod4&lt;-occMod(model=list(psi~Habitat,p~1),data=weta.data,type="so")
+mod5&lt;-occMod(model=list(psi~1,p~SURVEY+Obs),data=weta.data,type="so")
+mod6&lt;-occMod(model=list(psi~1,p~Obs),data=weta.data,type="so")
+mod7&lt;-occMod(model=list(psi~1,p~SURVEY),data=weta.data,type="so")
+mod8&lt;-occMod(model=list(psi~1,p~1),data=weta.data,type="so")
+#
+## create AIC table
+models&lt;-list(mod1,mod2,mod3,mod4,mod5,mod6,mod7,mod8)
+results&lt;-createAicTable(models)
+summary(results)
+
+## perform model averageing
+psi.ma&lt;-modAvg(aic.tab=results,param="psi")
+p.ma&lt;-modAvg(aic.tab=results,param="p")
+
+## Not run: 
+m1&lt;-occMod(model=list(psi~habitat,gamma~habitat+SEASON,epsilon~habitat+SEASON,
+                       p~habitat+SEASON),data=data,type="do.1")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>

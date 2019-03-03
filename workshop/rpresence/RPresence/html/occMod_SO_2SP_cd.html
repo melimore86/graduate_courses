@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fit two species, static occupancy (single season) model with...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for occMod_SO_2SP_cd {RPresence}"><tr><td>occMod_SO_2SP_cd {RPresence}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fit two species, static occupancy (single season) model with correlated detectoins</h2>
+
+<h3>Description</h3>
+
+<p>This is not intended for direct use, but instead the <code><a href="occMod.html">occMod</a></code> function should be used
+with <code>type="so.2sp.cd"</code>. NOTE THAT THERE MAY BE SOME CHANGES TO HOW THIS MODEL IS IMPLEMENTED
+IN THE NEAR FUTURE.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+occMod_SO_2SP_cd(psi = call(), psi.cov = data$unitcov, theta = call(),
+  theta.cov = cbind(data$unitcov, data$survcov), p = call(),
+  p.cov = cbind(data$unitcov, data$survcov), th0pi = call(),
+  th0pi.cov = data$unitcov, param = "nu", sp.contr = TRUE,
+  modname = NULL, paoname = NULL, outfile, model = 3000, fixed = NULL,
+  initvals = NULL, data, randinit = 0, maxfn = 32000, VCoutopt = " ",
+  noDerived = F)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for occupancy probability.
+The terms <code>SP</code> and <code>INT</code> can be used to define a species effect on occupancy and an
+occurrence-level interaction between species accordingly, without them being defined in <code>psi.cov</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.cov</code></td>
+<td>
+<p>A data frame containing the unit-specific covariates to use for the occupancy component
+of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for &quot;local-use&quot; probability. The
+following terms are pre-defined covariates to allow constraints on the theta's (thA, thA\', thBA, thBA\',
+thBa, thBa\').
+</p>
+
+<ul>
+<li><p><code>SP</code> - species effect on theta's (thA != thB), 
+</p>
+</li>
+<li><p><code>PRIME</code> - &quot;PRIME&quot; effect (thA !=thA\', thB. !=thB.\') 
+</p>
+</li>
+<li><p><code>BAa</code> - species interaction on theta (thBA != thBa, thBA\' != thBa\') 
+</p>
+</li>
+<li><p><code>INTth</code> - interaction of <code>PRIME</code> and <code>BAa</code> (thBA != thBA\' and thBA != thBa)
+</p>
+</li></ul>
+
+<p>So, the most generl model (all theta\'s different) would be: theta(<code>~SP*PRIME+BAa+INTth)</code></p>
+</td></tr>
+<tr valign="top"><td><code>theta.cov</code></td>
+<td>
+<p>A data frame containing the survey-specific covariates to use for the theta component
+of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>The right-hand side of the formula for the model to fit for detection probability. The terms
+<code>SP</code>, <code>INT_o</code> and <code>INT_d</code> can be used to define a species effect on detection, a
+detection-level interaction where the occurrence of one species changes the detection probability of
+the other species and a second detection-level interaction where the detection of one species changes
+the detection probability of the other species in the same survey. These terms do not have to be
+defined as variables in <code>p.cov</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>p.cov</code></td>
+<td>
+<p>A data frame containing the survey-specific covariates to use for the detection component
+of the model.</p>
+</td></tr>
+<tr valign="top"><td><code>param</code></td>
+<td>
+<p>The parameterisation to be used, either &quot;<code>psiBA</code>&quot; or &quot;<code>nu</code>&quot;, which relate to
+<code>type="so.2sp.1"</code> and <code>type="so.2sp.2"</code> in the function <code><a href="occMod.html">occMod</a></code> respectively.</p>
+</td></tr>
+<tr valign="top"><td><code>sp.contr</code></td>
+<td>
+<p><code>TRUE</code> (default) or <code>FALSE</code>. Specifies the type of contrast used for the
+<code>SP</code> term. It it used as the <code>contrasts</code> input in the function <code><a href="../../stats/html/contrast.html">contr.treatment</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>modname</code></td>
+<td>
+<p>(optional) a string containing the model name</p>
+</td></tr>
+<tr valign="top"><td><code>paoname</code></td>
+<td>
+<p>(optional) a string containing the filename for the temporary PRESENCE data file.</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>The PRESENCE model code. DO NOT CHANGE.</p>
+</td></tr>
+<tr valign="top"><td><code>fixed</code></td>
+<td>
+<p>A single-column matrix containing values for real parameters to be fixed at.
+<code>rownnames(fixed)</code> should contain the index of the real parameters to be fixed.</p>
+</td></tr>
+<tr valign="top"><td><code>initvals</code></td>
+<td>
+<p>Initial values for the beta parameters at which PRESENCE begins the optimisation.
+The default values in PRESENCE is 0.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>The <code>pao</code> data object containing the detection data and other information.
+NOTE THAT THERE MAY BE SOME CHANGES TO HOW THIS MODEL IS IMPLEMENTED IN THE NEAR FUTURE.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>returns a list of class <code>occMod</code> and <code>so2spCd</code>
+</p>
+<p><code>occMod$beta</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated logistic regression coefficients and std.err for prob. of occurrence.</p>
+</td></tr>
+<tr valign="top"><td><code>psi.VC</code></td>
+<td>
+<p>var-covar matrix for logistic regression coefficients for prob. of occurrence.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>estimated logistic regression coefficients and std.err for prob. of local occurrence in each survey.</p>
+</td></tr>
+<tr valign="top"><td><code>theta.VC</code></td>
+<td>
+<p>var-covar matrix for theta.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated logistic regression coefficients and standard errors for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>p.VC</code></td>
+<td>
+<p>variance-covariance matrix for logistic regression coefficients for probability of detection.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi</code></td>
+<td>
+<p>estimated logistic regression coefficients and std.err for prob. of local occurrence before 1st survey.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi.VC</code></td>
+<td>
+<p>var-covar matrix for th0pi.</p>
+</td></tr>
+<tr valign="top"><td><code>VC</code></td>
+<td>
+<p>the full variance-covariance matrix for all logistic regression coefficients.</p>
+</td></tr>
+</table>
+<p><code>occMod$real</code> contains the objects:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>psi</code></td>
+<td>
+<p>estimated probabilities of occurrence for each sampling unit, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>estimated prob. of local occurrence in each survey w/ std.err and 95% conf interval limits.</p>
+</td></tr>
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>estimated probabilities of detection for each survey, along with standard errors and limits of 95% confidence interval.</p>
+</td></tr>
+<tr valign="top"><td><code>th0pi</code></td>
+<td>
+<p>estimated prob. of local occurrence before 1st survey w/ std err and 95% conf. interval limits.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Jim Hines and Darryl MacKenzie
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="occMod.html">occMod</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# load a csv data file
+filename&lt;-system.file("extdata/twosp_exmpl.csv",package="RPresence")
+dethist&lt;-read.csv(filename,as.is=T)
+
+nsites=nrow(dethist); nsrvys=ncol(dethist)         #  set number of sites,surveys from det. history data
+dethist=matrix(as.integer(unlist(dethist)),nrow=nsites) # replace missing values (-) with NA
+
+##          create input "pao" object, for use with occMod function
+data=createPao(dethist,unitcov=NULL,survcov=NULL,title="twosp corr.det. example")
+
+## fit some models
+
+mod1&lt;-occMod(model=list(psi~SP,   # occupancy species-specific, no interaction, parameters: psiA, psiBA=psiBa
+                        theta~SP, # local occ. species-specific: parameters, thetaA0, thetaA1 (no corr. det. model)
+                        p~SP,     # detection sp. specific: parms: pA, pB
+                        th0pi~1),data=data,type="so.2sp.cd",param="PsiBA")
+
+mod2=occMod(model=list(psi~SP+INT,    # species and interaction effect (psiA != psiBA != psiBa)
+                       theta~SP*PRIME+BAa+INTth,   # thA != thA' != thBA != thBA' != thBa != thBa'
+                       p~SP+INT_o+INT_d+INT_so,    # pA != pB != rA != rBA !=rBa
+                       th0pi~1),                   # constant prop unocc before 1st segment
+            data=data, type="so.2sp.cd", fixed=NULL)
+#
+tbl=createAicTable(list(mod1,mod2)); print(tbl$table)
+
+sim_2sp_corr_det_data &lt;- function(sites=100,surveys=12,psiA=.8,psiBA=.3,psiBa=.7,
+                                  thA=c(.4,.9),thBA=c(.3,.9),thBa=c(.3,.9),  #  1st is theta, 2nd is theta\'
+                                  pA=.6,pB=.66,rA=.7,rBA=.4,rBa=.5,
+                                  th0piA=0,th0piBA=0,th0piBa=0) {
+              #  simulates single-season 2-species correlated detections data
+ psiB=c(psiBa,psiBA); th0piB=c(th0piBa,th0piBA); h=matrix(0,sites,surveys)
+ occA=0+(runif(sites)&lt;psiA);               # randomly assign occupancy state for sp. A of each site (0=unocc, 1=occ)
+ occB=0+(runif(sites)&lt;psiB[occA+1])        # randomly assign occupancy state for sp. B; depends on occupancy of sp. A
+ loccA=occA*(runif(sites)&lt;th0piA);         # randomly assign local-occ state before 1st segment of trail for sp. A
+ loccB=occB*(runif(sites)&lt;th0piB[loccA+1]) # randomly assign local-occ state before 1st segment of trail for sp. B
+ thB=c(thBa,thBA); pAx=c(pA,rA); pBx=c(pB,rBa,NA,rBA)
+ for (i in 1:surveys) {
+   loccA=occA*(runif(sites)&lt;thA[loccA+1]);       # local-occ for survey i depends on previous local-occ
+   loccB=occB*(runif(sites)&lt;thB[loccB+1+2*occA])
+   detA=loccA*(runif(sites)&lt;pAx[occB+1])         # detection depends on local-occ state (p=0 if not local-occ)
+   detB=loccB*(runif(sites)&lt;pBx[occA+1+2*detA])
+   h[,i]=detA+2*detB  #  detection-history in compressed format: 0=neither sp. detected, 1=sp. A only, 2=sp. B only, 3=both
+ }
+ return(h)
+}
+
+x=sim_2sp_corr_det_data(1000)          # simulate some data
+data=createPao(x)                     # create_pao file from data
+#    run a model : psiA()psiBA(),psiBa,thA(),thA'(),thBA(),thBA'(),thBa(),thBa'(),pA(),pB(),rA(),rBA(),rBa()
+mod3=occMod(model=list(psi~SP+INT,    # species and interaction effect (psiA != psiBA != psiBa)
+          theta~SP*PRIME+BAa+INTth,   # thA != thA' != thBA != thBA' != thBa != thBa'
+          p~SP+INT_o+INT_d+INT_so,    # pA != pB != rA != rBA !=rBa
+          th0pi~1),                   # constant prop unocc before 1st segment
+           data=data, type="so.2sp.cd", fixed=NULL)
+print_one_site_estimates(mod3,site=1)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>RPresence</em> version 2.12.17 <a href="00Index.html">Index</a>]</div>
+</body></html>
