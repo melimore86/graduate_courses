@@ -1,0 +1,6 @@
+
+Deer Island
+Your Power point was well designed and well presented, however big blocks of text are never a good idea; bullet points that you explain from a script are better.
+I’m not sure why you picked 1:7263 as a map scale … 1:7920 is 1” = 10 chains or 1:6000 is 1”=500’ which might be more useful. 
+
+Also, using shoreline data created at 1:80,000 is going to be pretty coarse compared to your digitizing so I don’t think you can really compare acres between them. You would be better off finding historic aerials and digitizing from them. You should be able to find 2004 color infrared DOQQs to digitize from that have 1 to 3 meter resolution. https://datagateway.nrcs.usda.gov/
