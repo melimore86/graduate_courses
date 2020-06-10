@@ -1,0 +1,123 @@
+﻿File name: DSAS_Summary_transect1010_20200608_154258.txt
+Timestamp of rate calculation: 06/08/2020 15:43:39
+DSAS version: 5.0.20190828.1922
+ArcGIS version: 10.7
+Rate types run: SCE, NSM, EPR, LRR, WLR
+Baseline layer: baselines_all
+Shoreline layer: shoreline_all
+Shoreline dates used: 1/20/1994, 12/30/1998, 12/31/2003, 5/7/2007, 12/31/2010, 1/3/2012, 12/18/2013, 1/21/2014, 11/11/2016, 5/26/2017
+Shoreline threshold: 8
+Confidence Interval (CI) selected: 90
+Default Uncertainty: 50
+Transect spacing length: 10
+Smoothing distance: 500
+Coordinate system: WGS_1984_UTM_Zone_17N
+Is bias applied: NO
+
+All rates reported are in meters/year, distance values are in meters.
+
+
+DISTANCE: SCE (Shoreline Change Envelope, m)
+
+SCE OVERALL AVERAGES: 
+total number of transects: 140
+average distance: 36.3
+maximum distance: 124.63
+maximum distance transect ID: 133
+minimum distance: 10.32
+minimum distance transect ID: 43
+
+
+DISTANCE: NSM (Net Shoreline Movement, m)
+
+NSM OVERALL AVERAGES: 
+total number of transects: 140
+average distance: 18.54
+number of transects with negative distance: 12
+percent of all transects that have a negative distance: 8.57%
+maximum negative distance: -6.79
+maximum negative distance transect ID: 57
+average of all negative distances: -3.85
+number of transects with positive distance: 128
+percent of all transects that have a positive distance: 91.43%
+maximum positive distance: 51.25
+maximum positive distance transect ID: 6
+average of all positive distances: 20.64
+
+
+RATE: EPR (End Point Rate, m/yr)
+
+EPR OVERALL AVERAGES: 
+total number of transects: 140
+average rate: 0.81
+average of the confidence intervals associated with rates: 3.06
+reduced n (number of independent transects): 1
+uncertainty of the average rate using reduced n: 3.06
+average rate with reduced n uncertainty: 0.81 +/- 3.06
+
+number of erosional transects: 12
+percent of all transects that are erosional: 8.57%
+percent of all transects that have statistically significant erosion: 0%
+maximum value erosion: -0.29
+maximum value erosion transect ID: 57
+average of all erosional rates: -0.17
+
+number of accretional transects: 128
+percent of all transects that are accretional: 91.43%
+percent of all transects that have statistically significant accretion: 0%
+maximum value accretion: 2.87
+maximum value accretion transect ID: 6
+average of all accretional rates: 0.91
+
+
+
+RATE: LRR (Linear Regression Rate, m/yr)
+
+LRR OVERALL AVERAGES: 
+total number of transects: 140
+average rate: 0.99
+average of the confidence intervals associated with rates: 0.67
+reduced n (number of independent transects): 6
+uncertainty of the average rate using reduced n: 0.27
+average rate with reduced n uncertainty: 0.99 +/- 0.27
+
+number of erosional transects: 29
+percent of all transects that are erosional: 20.71%
+percent of all transects that have statistically significant erosion: 5.71%
+maximum value erosion: -0.76
+maximum value erosion transect ID: 57
+average of all erosional rates: -0.31
+
+number of accretional transects: 111
+percent of all transects that are accretional: 79.29%
+percent of all transects that have statistically significant accretion: 56.43%
+maximum value accretion: 2.63
+maximum value accretion transect ID: 4
+average of all accretional rates: 1.33
+
+
+
+RATE: WLR (Weighted Linear Regression, m/yr)
+
+WLR OVERALL AVERAGES: 
+total number of transects: 140
+average rate: 0.99
+average of the confidence intervals associated with rates: 0.67
+reduced n (number of independent transects): 6
+uncertainty of the average rate using reduced n: 0.27
+average rate with reduced n uncertainty: 0.99 +/- 0.27
+
+number of erosional transects: 29
+percent of all transects that are erosional: 20.71%
+percent of all transects that have statistically significant erosion: 5.71%
+maximum value erosion: -0.76
+maximum value erosion transect ID: 57
+average of all erosional rates: -0.31
+
+number of accretional transects: 111
+percent of all transects that are accretional: 79.29%
+percent of all transects that have statistically significant accretion: 56.43%
+maximum value accretion: 2.63
+maximum value accretion transect ID: 4
+average of all accretional rates: 1.33
+
