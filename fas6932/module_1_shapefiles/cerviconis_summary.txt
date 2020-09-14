@@ -1,0 +1,9 @@
+FID,MSTSENDES,Cnt_MSTSENDES
+-1,10D: Scrub-shrub wetlands,2590
+-1,"1B: Exposed, solid man-made structures",35
+-1,"2A: Exposed wave-cut platforms in bedrock, mud, or clay",5
+-1,3A: Fine- to medium- grained sand beaches,812
+-1,4: Coarse-grained sand beaches,145
+-1,5: Mixed sand and gravel beaches,7
+-1,6B: Exposed riprap,257
+-1,7: Exposed tidal flats; Sand flats,3
