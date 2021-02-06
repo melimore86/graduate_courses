@@ -1,4 +1,4 @@
-Range (LRR),Count,Percentage of total transects (n=82)
+range,count,per
  -5.0 < LRR <= -3.0,7,8.50%
  -3.0 < LRR <= -2.0,12,14.60%
  -2.0 < LRR <= -1.0,25,30.50%
