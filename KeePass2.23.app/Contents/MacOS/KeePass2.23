@@ -1,0 +1,6 @@
+#!/bin/bash
+#Script to lauch KeePass with mono
+###########################################################
+KeePath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+mono $KeePath/KeePass.exe >> /dev/null  
